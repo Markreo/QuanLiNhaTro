@@ -1,6 +1,6 @@
 package com.quanlinhatro
 
-abstract class Base {
+abstract class Base implements Serializable{
     ObjectType objectType() {
         return ObjectType.NONE;
     }

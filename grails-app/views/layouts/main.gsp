@@ -37,46 +37,21 @@ Purchase: http://wrapbootstrap.com
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
 
 	<script src="${resource(dir: 'assets/js/fuelux/wizard', file: 'wizard-custom.js')}"></script>
-	%{--<script>
-        console.log($(document).find('#fullscreen-toggler'))
-        $(document)
-                .on('click', '#fullscreen-toggler', function (e) {
-                    var element = document.documentElement;
-                    if (!$('body')
-                                    .hasClass("full-screen")) {
+	<script>
+		function submitform(id) {
+			if(id == undefined){
+				$("#page-body").find("form").submit()
+			} else{
+				$("#page-body").find("form#" + id).submit()
+			}
 
-                        $('body')
-                                .addClass("full-screen");
-                        $('#fullscreen-toggler')
-                                .addClass("active");
-                        if (element.requestFullscreen) {
-                            element.requestFullscreen();
-                        } else if (element.mozRequestFullScreen) {
-                            element.mozRequestFullScreen();
-                        } else if (element.webkitRequestFullscreen) {
-                            element.webkitRequestFullscreen();
-                        } else if (element.msRequestFullscreen) {
-                            element.msRequestFullscreen();
-                        }
-
-                    } else {
-
-                        $('body')
-                                .removeClass("full-screen");
-                        $('#fullscreen-toggler')
-                                .removeClass("active");
-
-                        if (document.exitFullscreen) {
-                            document.exitFullscreen();
-                        } else if (document.mozCancelFullScreen) {
-                            document.mozCancelFullScreen();
-                        } else if (document.webkitExitFullscreen) {
-                            document.webkitExitFullscreen();
-                        }
-
-                    }
-                });
-    </script>--}%
+		}
+		
+		function complete_form(data) {
+			console.log('complete form')
+			console.log(data)
+		}
+	</script>
 </head>
 <!-- /Head -->
 <!-- Body -->
@@ -154,6 +129,27 @@ Purchase: http://wrapbootstrap.com
 <script src="${resource(dir: 'assets/js', file: 'skins.min.js')}"></script>
 <!--Beyond Scripts-->
 <script src="${resource(dir: 'assets/js', file: 'beyond.js')}"></script>
+<script>
+	$(document).ready(function () {
+		//USER NAME
+		$.post("${createLink(controller: 'user', action: 'getUserName')}", function (username) {
+			$("#main_userName").html(username)
+		})
+
+		//REGION LIST
+		$.post("${createLink(controller: 'region', action: 'regionList')}", function (list) {
+			$("#main_regions").append(list)
+		})
+
+		$(document).on('click', "a[rel='new-tab']", function (event) {
+			event.preventDefault();
+			var url = $(this).attr('href');
+			$.post(url, function (html) {
+				$("#page-body").html(html);
+			})
+		})
+	})
+</script>
 </body>
 <!--  /Body -->
 </html>

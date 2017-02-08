@@ -435,13 +435,3 @@
     </ul>
     <!-- /Sidebar Menu -->
 </div>
-<script>
-    $("a[rel='menu']").on('click', function (event) {
-        event.preventDefault();
-        console.log($(this).attr('href'));
-        var url = $(this).attr('href');
-        $.post(url, function (html) {
-            $("#page-body").html(html);
-        })
-    })
-</script>

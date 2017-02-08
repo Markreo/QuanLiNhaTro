@@ -243,7 +243,7 @@
                                     <img src="assets/img/avatars/adam-jansen.jpg">
                                 </div>
                                 <section>
-                                    <h2><span class="profile"><span>David Stevenson</span></span></h2>
+                                    <h2><span class="profile"><span id="main_userName">User Name</span></span></h2>
                                 </section>
                             </a>
                             <!--Login Area Dropdown-->
@@ -258,7 +258,7 @@
                                     </div>
                                 </li>
                                 <!--Avatar Area-->
-                                <li class="edit">
+                                <li class="edit" id="main_regions">
                                     <a href="profile.html" class="pull-left">Profile</a>
                                     <a href="#" class="pull-right">Setting</a>
                                 </li>
