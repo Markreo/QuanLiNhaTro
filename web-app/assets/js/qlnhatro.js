@@ -53,7 +53,7 @@ function complete_form(data) {
     }
     if(typeof  data.message != 'undefined'){
         console.log('notify')
-        var icon
+        var icon;
         switch (data.message.type){
             case 'success': icon =  'fa-check'; break;
             case 'error': icon = 'fa-times'; break;
@@ -61,6 +61,15 @@ function complete_form(data) {
             default: icon = 'fa-info'; break;
         }
         Notify(data.message.content, 'top-right', '5000', data.message.type, icon, true);
+    }
+
+    if(typeof data.code != 'undefined'){
+        console.log(data.code)
+        switch (data.code){
+            case 'update_region': {
+                loadpage();
+            }; break;
+        }
     }
 }
 
@@ -82,27 +91,23 @@ function GoLastTab() {
     SaveCookie();
 }
 
+var loadpage = function () {
+    $.post("home/loadpage", function (data) {
+        $("#main_userName").html(data.username);
+        $("#main_dasboard").html(data.regionname);
+        $("#main_regions").remove("a[rel='region']");
+        $("#main_regions").append(data.list);
+    })
+}
+
 $(document).ready(function () {
 
-    //USER NAME
-    $.post("user/getUserName", function (username) {
-        $("#main_userName").html(username)
-    })
-
-    //USER NAME
-    $.post("region/getCurrentRegion", function (regionname) {
-        $("#main_dasboard").html(regionname)
-    })
-
-    //REGION LIST
-    $.post("region/regionList", function (list) {
-        $("#main_regions").append(list)
-    })
+    loadpage();
 
     //COOKIE
     if(tabs){
         console.log()
-        var url = tabs.pop()
+        var url = tabs.pop();
         if(url){
             $.post(url, function (html) {
                 $("#page-body").html(html);

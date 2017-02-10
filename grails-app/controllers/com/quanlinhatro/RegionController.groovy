@@ -18,14 +18,6 @@ class RegionController extends BaseController {
         }
     }
 
-    def getCurrentRegion() {
-        if(region) {
-            render(region?.name)
-        } else{
-            render('Dashboard')
-        }
-    }
-
     def save(long id) {
         def regionInstance = id ? Region.get(id) : new Region(user: user)
         if(id) {
@@ -43,12 +35,7 @@ class RegionController extends BaseController {
                 if(userInstance.save(flush: true)){
                 }
             }
-            render ([close: 'this',  message: [type: 'success', content: regionInstance.name + " đã đuợc tạo!"]] as JSON)
+            render ([close: 'this', code: 'update_region',  message: [type: 'success', content: regionInstance.name + " đã đuợc tạo!"]] as JSON)
         }
-    }
-
-    def regionList() {
-        def regions = Region.findAllByUser(user)
-        render(template: 'listRegion', model: [regions: regions])
     }
 }

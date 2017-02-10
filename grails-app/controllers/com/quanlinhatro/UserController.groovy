@@ -6,10 +6,6 @@ class UserController extends BaseController {
 
     def index() { }
 
-    def getUserName(){
-        render "${user.name}"
-    }
-
     @Secured('permitAll')
     def quickUser() {
         if(!User.list()) {
