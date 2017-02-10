@@ -1,3 +1,4 @@
+
 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
     <div class="row">
         <div class="col-xs-12">
@@ -13,8 +14,10 @@
                         <div class="tab-content tabs-flat no-padding">
                             <div class="tab-pane animated fadeIn no-padding-bottom active">
                                 <div class="col-md-12">
+                                    <div class="horizontal-space"></div>
+                                    <qlnhatro:renderError/>
                                     <g:formRemote role="form" name="form" url="[controller: 'region', action: 'save']" onSuccess="complete_form(data);">
-                                        <div class="horizontal-space"></div>
+
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <div class="form-group">
@@ -42,49 +45,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="box-visits">
-                        <div class="row">
-                            <div class="col-lg-6 col-sm-6 col-xs-12">
-                                <div class="notification" style="cursor: pointer" onclick="submitform()">
-                                    <div class="clearfix">
-                                        <div class="notification-icon">
-                                            <i class="fa fa-save themeprimary bordered-1 bordered-themeprimary"></i>
-                                        </div>
-                                        <div class="notification-body">
-                                            <span class="title">Lưu</span>
-                                            <span class="description">Lưu lại mọi thông tin trên</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-sm-6 col-xs-12">
-                                <div class="notification" style="cursor: pointer" onclick="cancel()">
-                                    <div class="clearfix">
-                                        <div class="notification-icon">
-                                            <i class="fa fa-times bordered-1 bordered-orange orange"></i>
-                                        </div>
-                                        <div class="notification-body">
-                                            <span class="title">Hủy</span>
-                                            <span class="description">Trở về trang trước</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <qlnhatro:renderButton/>
                 </div>
             </div>
         </div>
     </div>
 </div>
 </div>
-<script>
-    var cancel = function () {
-        console.log('cancel')
-        var url = "${createLink(controller: 'chuTro', action: 'view')}"
-        $.post(url, function (html) {
-            console.log(html)
-            $(document).find('#chuTro').html(html)
-        })
-    }
-</script>

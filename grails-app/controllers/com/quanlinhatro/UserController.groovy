@@ -7,10 +7,8 @@ class UserController extends BaseController {
     def index() { }
 
     def getUserName(){
-        println(user.name)
         render "${user.name}"
     }
-
 
     @Secured('permitAll')
     def quickUser() {

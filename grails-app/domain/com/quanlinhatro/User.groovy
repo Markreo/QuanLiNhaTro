@@ -17,6 +17,8 @@ class User implements Serializable {
 
 	static hasMany = [regions: Region]
 
+	Region currentRegion
+
 	String username
 	String password
 	boolean enabled = true
@@ -58,6 +60,7 @@ class User implements Serializable {
 		phone nullable: false, blank: false, unique: true
 		email nullable: true, unique: true
 		regions nullable: true
+		currentRegion nullable: true
 		username blank: false, unique: true
 		password blank: false
 		dateCreated()

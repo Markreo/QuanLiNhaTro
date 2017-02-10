@@ -10,25 +10,25 @@
     <ul class="nav sidebar-menu">
         <!--Dashboard-->
         <li class="active">
-            <a href="${createLink(controller: 'home', action: 'dashboard')}" rel='menu'>
+            <a href="${createLink(controller: 'home', action: 'dashboard')}" rel='new-tab'>
                 <i class="menu-icon glyphicon glyphicon-home"></i>
-                <span class="menu-text"> Dashboard </span>
+                <span class="menu-text" id="main_dasboard"> Dashboard </span>
             </a>
         </li>
         <li>
-            <a href="${createLink(controller: 'chuTro', action: 'index')}" rel='menu'>
+            <a href="${createLink(controller: 'chuTro', action: 'index')}" rel='new-tab'>
                 <i class="menu-icon glyphicon glyphicon-tasks"></i>
                 <span class="menu-text"> Chủ trọ </span>
             </a>
         </li>
         <li>
-            <a href="${createLink(controller: 'khu', action: 'index')}" rel='menu'>
+            <a href="${createLink(controller: 'khu', action: 'index')}" rel='new-tab'>
                 <i class="menu-icon fa fa-th"></i>
                 <span class="menu-text"> Khu/Dãy trọ </span>
             </a>
         </li>
     <li>
-        <a href="${createLink(controller: 'phongTro', action: 'index')}" rel='menu'>
+        <a href="${createLink(controller: 'phongTro', action: 'index')}" rel='new-tab'>
             <i class="menu-icon fa fa-th"></i>
             <span class="menu-text"> Phòng Trọ </span>
         </a>

@@ -14,7 +14,7 @@ class Region extends Base {
     Date lastUpdated
 
     static constraints = {
-        name nullable: false, unique: ['user']
+        name nullable: false, blank: false, unique: ['user']
         address nullable: true
         user nullable: false
         rooms nullable: true

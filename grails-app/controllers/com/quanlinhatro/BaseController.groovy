@@ -11,6 +11,7 @@ class BaseController {
 
     def beforeInterceptor = {
         user = springSecurityService.currentUser as User
+        region = user?.currentRegion
         println("${request.xhr ? 'AJAX' : ''} ${request.method} ${controllerName}.${actionName} --- params:${params}")
         if (user) {
             session.user = user
