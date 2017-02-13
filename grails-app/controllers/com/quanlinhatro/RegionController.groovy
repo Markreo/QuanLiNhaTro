@@ -7,7 +7,7 @@ class RegionController extends BaseController {
     def index() { }
 
     def create(){
-        render(template: 'edit', model: [region: new Region(user: user)])
+        render(template: 'edit', model: [region: new Region()])
     }
 
     def setCurrentRegion(Region instance) {

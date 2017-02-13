@@ -12,13 +12,13 @@
         <li class="active">
             <a href="${createLink(controller: 'home', action: 'dashboard')}" rel='new-tab'>
                 <i class="menu-icon glyphicon glyphicon-home"></i>
-                <span class="menu-text" id="main_dasboard"> Dashboard </span>
+                <span class="menu-text" id="main_dashboard"> Dashboard </span>
             </a>
         </li>
         <li>
-            <a href="${createLink(controller: 'chuTro', action: 'index')}" rel='new-tab'>
+            <a href="${createLink(controller: 'room', action: 'index')}" rel='new-tab'>
                 <i class="menu-icon glyphicon glyphicon-tasks"></i>
-                <span class="menu-text"> Chủ trọ </span>
+                <span class="menu-text"> Phòng Trọ </span>
             </a>
         </li>
         <li>

@@ -28,6 +28,8 @@ Purchase: http://wrapbootstrap.com
 	<link href="${resource(dir: 'assets/css', file: 'demo.min.css')}" rel="stylesheet" />
 	<link href="${resource(dir: 'assets/css', file: 'typicons.min.css')}" rel="stylesheet" />
 	<link href="${resource(dir: 'assets/css', file: 'animate.min.css')}" rel="stylesheet" />
+	<link href="${resource(dir: 'assets/css', file: 'qlnhatro.css')}" rel="stylesheet" />
+
 	<link id="skin-link" href="" rel="stylesheet" type="text/css" />
 
 	<script src="${resource(dir: 'assets/js', file: 'jquery.min.js')}"></script>

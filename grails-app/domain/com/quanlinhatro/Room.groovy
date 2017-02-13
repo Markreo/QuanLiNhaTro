@@ -5,7 +5,7 @@ package com.quanlinhatro
 
 class Room extends Base{
     enum Status {
-        NEW(0, "Phòng mới"),
+        NEW(0, "Đang trống"),
         MORTGAGED(1, "Đã đặt cọc"),
         ARERENTING(2, "Đang cho thuê"),
         REPAIRING(3, "Đang sửa chữa"),
@@ -35,6 +35,7 @@ class Room extends Base{
     static mapping = {
         version(false)
     }
+
 
     @Override
     ObjectType objectType() {

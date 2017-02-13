@@ -1,0 +1,25 @@
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url("./angle-down.png") 96% / 15% no-repeat #eee;
+}
+
+#page-body > .col-lg-12{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.ql-footer{
+    height: 20px;
+    width: 100%;
+    background: white;
+    margin-top: 10px;
+}
+
+.ql-table{
+
+}
+
+.ql-table thead {border-bottom: 4px solid #dddddd}
+.ql-table thead tr{background: white}

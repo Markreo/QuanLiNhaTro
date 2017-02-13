@@ -94,7 +94,7 @@ function GoLastTab() {
 var loadpage = function () {
     $.post("home/loadpage", function (data) {
         $("#main_userName").html(data.username);
-        $("#main_dasboard").html(data.regionname);
+        $("#main_dashboard").html(data.regionname);
         $("#main_regions").remove("a[rel='region']");
         $("#main_regions").append(data.list);
     })
@@ -106,8 +106,7 @@ $(document).ready(function () {
 
     //COOKIE
     if(tabs){
-        console.log()
-        var url = tabs.pop();
+        var url = tabs[tabs.length - 1];
         if(url){
             $.post(url, function (html) {
                 $("#page-body").html(html);
