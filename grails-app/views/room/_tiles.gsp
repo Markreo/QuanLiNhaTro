@@ -19,100 +19,46 @@
                                     <div class="horizontal-space"></div>
                                     <qlnhatro:renderError/>
                                 </div>
-                                        %{--<div class="col-xs-12 col-md-12">
-                                            <table class="table table-hover ql-table dataTable">
-                                                <thead>
-                                                <tr>
-                                                    <th>
-                                                        #
-                                                    </th>
-                                                    <th>
-                                                        Tên phòng
-                                                    </th>
-                                                    <th>
-                                                        Trạng thái
-                                                    </th>
-                                                    <th>
-                                                        Số lượng người thuê
-                                                    </th>
-                                                    <th>
-                                                        Giá phòng
-                                                    </th>
-                                                    <th>
-                                                        Ngày thanh toán tiếp
-                                                    </th>
-                                                    <th style="text-align: center;">
-                                                        <a href="${createLink(controller: 'room', action: 'create')}" class="btn btn-default  btn-circle btn-xs" rel="new-tab"><i class="glyphicon glyphicon-plus"></i></a>
-                                                    </th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
 
-
-                                                <g:each in="${rooms}" var="r" status="i">
-
-                                                    <tr class="">
-                                                        <td>
-                                                            ${i}
-                                                        </td>
-                                                        <td>
-                                                            ${r.name}
-                                                        </td>
-                                                        <td>
-                                                            ${r.status.name}
-                                                        </td>
-                                                        <td>
-                                                            ${r.renters.size()}
-                                                        </td>
-                                                        <td>
-                                                            Column heading
-                                                        </td>
-                                                        <td>
-                                                            Column heading
-                                                        </td>
-                                                        <td>
-                                                            <a href="#" class="btn btn-xs edit"><i class="fa fa-edit"></i> Chỉnh sửa</a>
-                                                            <a href="#" class="btn btn-xs edit"><i class="fa fa-edit"></i> Cho thuê</a>
-                                                            <a href="#" class="btn btn-xs delete"><i class="fa fa-trash-o"></i> Xóa</a>
-                                                        </td>
-                                                    </tr>
-
-                                                </g:each>
-
-                                                </tbody>
-                                            </table>
-
-                                        </div>--}%
+                                    <a class="btn btn-default margin-left-20" href="${createLink(controller: 'room', action: 'create')}" rel="new-tab"><i class="fa fa-plus"></i> Thêm</a>
 
                                 <div class="tickets-container">
                                     <ul class="tickets-list">
-                                        <g:each in="${rooms}" var="r">
+                                        <g:each in="${rooms}" var="r" status="i">
                                             <li class="ticket-item">
                                                 <div class="row">
-                                                    <div class="ticket-user col-lg-6 col-sm-12">
+                                                    <div class="ticket-user col-md-3 col-sm-12">
                                                         <img src="${resource(dir:'assets/img', file: 'home_' + r.status.id + '.png')}" class="user-avatar">
                                                         <span class="user-name">Phòng ${r.name}</span>
                                                         <span class="user-at">at</span>
                                                         <span class="user-company">${r.status.name}</span>
                                                     </div>
-                                                    <div class="ticket-time  col-lg-4 col-sm-6 col-xs-12">
+                                                    <div class="ticket-time  col-md-2 col-sm-6 col-xs-12">
                                                         <div class="divider hidden-md hidden-sm hidden-xs"></div>
-                                                        <i class="fa fa-clock-o"></i>
-                                                        <span class="time">3 Hours Ago</span>
+                                                        <i class="fa fa-user"></i>
+                                                        ${r.renters.size()} <span class="time"> người đang thuê</span>
                                                     </div>
-                                                    <div class="ticket-type  col-lg-2 col-sm-6 col-xs-12">
+                                                    <div class="ticket-time  col-md-4 col-sm-6 col-xs-12">
+                                                        <div class="divider hidden-md hidden-sm hidden-xs"></div>
+                                                        <span class="time"> 1.000.000đ đến ngày 12/0${i+1}/2017</span>
+                                                    </div>
+                                                    <div class="ticket-time  col-md-2 col-sm-6 col-xs-12">
+                                                        <div class="divider hidden-md hidden-sm hidden-xs"></div>
+                                                        <span class="time"> Số điện: 4320 (32 Số)</span>
+                                                    </div>
+                                                    <div class="ticket-type  col-md-1 col-sm-6 col-xs-12">
                                                         <span class="divider hidden-xs"></span>
-                                                        <span class="type">Payment</span>
+                                                        <span class="type">${r.status.action}</span>
                                                     </div>
-                                                    <div class="ticket-state bg-palegreen">
-                                                        <i class="fa fa-check"></i>
-                                                    </div>
+                                                    <a class="ticket-state bg-yellow" href="${createLink(controller: 'room', action: 'forRent', id: r.id)}" rel="new-tab">
+                                                        <i class="fa fa-arrow-right"></i>
+                                                    </a>
                                                 </div>
                                             </li>
                                         </g:each>
 
 
-                                        <li class="ticket-item">
+                                       %{-- <li class="ticket-item">
                                             <div class="row">
                                                 <div class="ticket-user col-lg-6 col-sm-12">
                                                     <img src="assets/img/avatars/Matt-Cheuvront.jpg" class="user-avatar">
@@ -177,7 +123,7 @@
                                                     <i class="fa fa-info"></i>
                                                 </div>
                                             </div>
-                                        </li>
+                                        </li>--}%
                                     </ul>
                                 </div>
 

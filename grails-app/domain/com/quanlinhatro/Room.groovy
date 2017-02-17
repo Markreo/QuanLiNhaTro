@@ -5,15 +5,16 @@ package com.quanlinhatro
 
 class Room extends Base{
     enum Status {
-        NEW(0, "Đang trống"),
-        MORTGAGED(1, "Đã đặt cọc"),
-        ARERENTING(2, "Đang cho thuê"),
-        REPAIRING(3, "Đang sửa chữa"),
-        DROP(4, "Đã hỏng")
+        NEW(0, "Đang trống", "Cho thuê"),
+        MORTGAGED(1, "Đã đặt cọc", "Cập nhật"),
+        ARERENTING(2, "Đang cho thuê", "Cập nhật"),
+        REPAIRING(3, "Đang sửa chữa", "Xong"),
+        DROP(4, "Đã hỏng", "Hủy")
 
         int id
         String name
-        Status(id, name) {this.id =  id; this.name = name}
+        String action
+        Status(id, name, action) {this.id =  id; this.name = name; this.action = action}
     }
 
     String name

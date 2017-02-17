@@ -52,4 +52,19 @@ class RoomController extends BaseController{
         }
 
     }
+
+    def forRent(long id){ //id: identification of room
+        def room = Room.get(id)
+        if(room) {
+            render(template: 'forRent', model: [room: room])
+        }
+
+    }
+
+    def saveRent(long id) {
+        def room = Room.get(id)
+        if(room) {
+            //render(template: 'forRent', model: [room: room])
+        }
+    }
 }
