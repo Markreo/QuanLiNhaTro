@@ -67,4 +67,25 @@ class RoomController extends BaseController{
             //render(template: 'forRent', model: [room: room])
         }
     }
+
+    def saveForRent() {
+        def roomInstance = Room.get(params.room as long)
+        if(roomInstance) {
+            println("save for rent")
+            def renters
+            def lastname = params.getList('lastname')
+            def firstname = params.getList('firstname')
+            def birthPlace = params.getList('birthPlace')
+            def birthYear = params.getList('birthYear')
+            def userID = params.getList('userID')
+            def phone = params.getList('phone')
+            lastname.eachWithIndex {val,index ->
+                println('val - ' + val)
+                def renter = new Renter(room: roomInstance, lastName: val, firstName: firstname[index], birthPlace: birthPlace[index], birthYear: birthYear[index], userID: userID[index], phone: phone[index]);
+                roomInstance.addToRenters(renter).save(flush: true)
+            }
+            render ([response: 'OK', message: [type: 'success', content: 'Save!']] as JSON)
+        }
+
+    }
 }

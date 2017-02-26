@@ -12,12 +12,16 @@ class Renter extends Base {
         Sex(id, name) {this.id = id; this.name = name}
     }
 
+
+    //TODO: edit field name
     String firstName
     String lastName
-    Sex sex
+    Sex sex = Sex.MALE
     String phone
+    String userID
+    String birthPlace
+    int birthYear
 
-    static belongsTo = [room: Room]
 
     Date dateCreated
     Date lastUpdated
@@ -26,7 +30,6 @@ class Renter extends Base {
         firstName nullable: false
         lastName nullable: true
         sex nullable: false
-        room nullable: false
         phone nullable: false
 
         dateCreated()

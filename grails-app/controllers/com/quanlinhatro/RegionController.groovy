@@ -35,6 +35,14 @@ class RegionController extends BaseController {
                 if(userInstance.save(flush: true)){
                 }
             }
+
+            def services = params.getList('services')
+            services.each {service->
+                regionInstance.addToServices(new Service(service.properties)).save(flush: true)
+            }
+
+            //TODO: check error
+
             render ([close: 'this', code: 'update_region',  message: [type: 'success', content: regionInstance.name + " đã đuợc tạo!"]] as JSON)
         }
     }

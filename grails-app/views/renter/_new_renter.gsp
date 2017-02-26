@@ -7,24 +7,25 @@
             <div class="col-sm-5">
                 <div class="form-group">
                     <span class="input-icon icon-right">
-                        <input type="text" class="form-control" placeholder="Họ & Tên đệm">
-                        <i class="fa fa-user"></i>
+                        <input name="firstname" type="text" class="form-control" placeholder="Họ & Tên đệm">
+                        <i class="fa fa-user themeprimary"></i>
                     </span>
                 </div>
             </div>
             <div class="col-sm-5">
                 <div class="form-group">
                     <span class="input-icon icon-right ">
-                        <input type="text" class="form-control" placeholder="Tên">
-                        <i class="fa fa-user"></i>
+                        <input name="lastname" type="text" class="form-control" placeholder="Tên">
+                        <i class="fa fa-user themeprimary"></i>
                     </span>
                 </div>
             </div>
             <div class="col-sm-2 pull-right">
                 <div class="checkbox">
                     <label>
-                        <input type="checkbox" checked="checked">
-                        <span class="text">Nam</span>
+                        %{--//TODO: return no without check--}%
+                        <input name="sex" checked type="checkbox">
+                        <span class="text "> Nam</span>
                     </label>
                 </div>
             </div>
@@ -35,16 +36,16 @@
             <div class="col-sm-5">
                 <div class="form-group">
                     <span class="input-icon icon-right no-padding-sm ">
-                        <input type="text" class="form-control" placeholder="Nơi sinh">
-                        <i class="fa fa-envelope-o circular"></i>
+                        <input name="birthPlace" type="text" class="form-control" placeholder="Nơi sinh">
+                        <i class="fa fa-envelope-o circular themeprimary"></i>
                     </span>
                 </div>
             </div>
             <div class="col-sm-5">
                 <div class="form-group">
                     <span class="input-icon icon-right no-padding-sm ">
-                        <input type="text" class="form-control" placeholder="Năm sinh">
-                        <i class="fa fa-envelope-o circular"></i>
+                        <input name="birthYear" type="text" class="form-control" placeholder="Năm sinh">
+                        <i class="fa fa-envelope-o circular themeprimary"></i>
                     </span>
                 </div>
             </div>
@@ -54,15 +55,15 @@
 
     <div class="form-group">
         <span class="input-icon icon-right">
-            <input type="text" class="form-control" id="passwordInput" placeholder="Số chứng minh nhân dân">
-            <i class="fa fa-lock circular"></i>
+            <input name="userID" type="text" class="form-control" id="passwordInput" placeholder="Số chứng minh nhân dân">
+            <i class="fa fa-lock circular themeprimary"></i>
         </span>
     </div>
     <div class="form-group">
         <span class="input-icon icon-right">
-            <input type="text" class="form-control" id="confirmPasswordInput" placeholder="Số điện thoại">
-            <i class="fa fa-lock circular"></i>
+            <input name="phone" type="text" class="form-control" id="confirmPasswordInput" placeholder="Số điện thoại">
+            <i class="fa fa-lock circular themeprimary"></i>
         </span>
     </div>
 </div>
-<hr/>
+<hr class="bordered bordered-themeprimary"/>

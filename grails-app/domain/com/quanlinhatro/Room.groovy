@@ -20,7 +20,11 @@ class Room extends Base{
     String name
     Status status = Status.NEW
     static belongsTo = [region: Region]
-    static hasMany = [renters: Renter]
+    static hasMany = [renters: Renter,
+                      services: Service, //cho thuê những dịch vụ này
+                      uses: Service] //những dịch vụ sẽ tính (cho tháng sau)
+
+    double price //to service
 
     Date dateCreated
     Date lastUpdated
@@ -30,11 +34,18 @@ class Room extends Base{
         status nullable: false
         region nullable: false
         renters nullable: true
+        services nullable: true
+
+        price nullable:false //to service
+
         dateCreated()
     }
 
     static mapping = {
         version(false)
+        renters joinTable: [name: 'room_renter', column: 'room_id']
+        services joinTable: [name: 'lease', key : 'service_id']
+        uses joinTable: [name: 'room_uses_service', key: 'service_id', column:'room_id']
     }
 
 

@@ -67,7 +67,7 @@
                                                 <div class="form-group">
                                                     <label>Giá</label>
                                                     <span class="input-icon icon-right">
-                                                        <input class="form-control" name="address" placeholder="Giá" type="number" value="${room?.price}">
+                                                        <input class="form-control" name="price" placeholder="Giá" type="number" value="${room?.price}">
                                                         <i class="fa  fa-money themeprimary"></i>
                                                     </span>
                                                 </div>

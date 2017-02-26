@@ -8,7 +8,7 @@ class Region extends Base {
     String name
     String address
     static belongsTo = [user: User]
-    static hasMany = [rooms: Room]
+    static hasMany = [rooms: Room, services: Service] //services: Service giá dịch vụ chung trong khu này
 
     Date dateCreated
     Date lastUpdated
@@ -23,6 +23,7 @@ class Region extends Base {
 
     static mapping = {
         version(false)
+        services joinTable: [name: 'region_default', key: 'service_id', column: 'region_id']
     }
 
     @Override
