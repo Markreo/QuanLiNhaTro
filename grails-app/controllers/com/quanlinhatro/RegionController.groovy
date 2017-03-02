@@ -36,9 +36,10 @@ class RegionController extends BaseController {
                 }
             }
 
-            def services = params.getList('services')
-            services.each {service->
-                regionInstance.addToServices(new Service(service.properties)).save(flush: true)
+            def services = params.get('services')
+            def count =  services?.unit?.size()
+            count.times {
+                regionInstance.addToServices(new Service(unit: services.unit[it], name: services.name[it], currentPrice: services.currentPrice[it], region: regionInstance)).save(flush: true)
             }
 
             //TODO: check error

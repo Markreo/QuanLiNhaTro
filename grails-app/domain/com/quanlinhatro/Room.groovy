@@ -21,7 +21,7 @@ class Room extends Base{
     Status status = Status.NEW
     static belongsTo = [region: Region]
     static hasMany = [renters: Renter,
-                      services: Service, //cho thuê những dịch vụ này
+                      services: Service, //cho thuê những dịch vụ này//lease
                       uses: Service] //những dịch vụ sẽ tính (cho tháng sau)
 
     double price //to service

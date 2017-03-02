@@ -5,6 +5,7 @@ package com.quanlinhatro
 
 class Lease {
 
+    static belongsTo = [room: Room, service: Service]
     int value1
     int value2
     double price
@@ -16,6 +17,8 @@ class Lease {
     Date lastUpdated
 
     static constraints = {
+        room nullable: false
+        service nullable: false
         value1 nullable: true
         value2 nullable: true
         price nullable: true

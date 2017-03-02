@@ -58,36 +58,59 @@
                                                                 <div class="step-pane" id="wiredstep2">
                                                                     <h6 class="row-title before-green no-margin-top"> Cho thuê</h6>
                                                                     <div class="horizontal-space"></div>
-                                                                    <form role="form">
-                                                                        <div class="col-md-12">
-                                                                            <p>Phòng ${room.name} sẽ được cho thuê với các giá</p>
-                                                                            note: thêm các dịch vụ
-                                                                        </div>
-                                                                        <div class="col-sm-6">
-                                                                            <label>Giá phòng:</label>
-                                                                            <div class="form-group">
-                                                                                <input type="text" class="form-control">
+                                                                    <div class="col-lg-8 col-sm-8 col-xs-12" style="padding-left: 25px">
+                                                                        <div class="widget">
+                                                                            <div class="widget-header bordered-bottom bordered-palegreen">
+                                                                                <span class="widget-caption">Bảng giá cho thuê phòng</span>
+                                                                            </div>
+                                                                            <div class="widget-body">
+                                                                                <div>
+                                                                                    <g:formRemote name="saveRoomUsesService" url="[controller: 'room', action: 'saveRoomUsesService']" class="form-horizontal form-bordered" role="form" onSuccess="returnSaveForRent(data);">
+                                                                                        <g:hiddenField name="room" value="${room.id}"/>
+                                                                                        <div class="form-group">
+                                                                                            <label class="col-xs-2 control-label no-padding-right">Tên dịch vụ</label>
+                                                                                            <div class="col-xs-8 text-align-center">
+                                                                                                <label class="control-label">Giá dịch vụ</label>
+                                                                                            </div>
+                                                                                            <div class="col-xs-2">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <g:each in="${room.region.services}" var="service">
+                                                                                            <div class="form-group">
+                                                                                                <label class="col-xs-2 control-label no-padding-right">${service.name}:</label>
+                                                                                                <g:hiddenField name="serviceId" value="${service.id}"/>
+                                                                                                <div class="col-xs-8">
+                                                                                                    <input name="currentPrice" type="text" class="form-control" value="${room.uses.find {it.parent.id == service.id}.currentPrice ?: service.currentPrice}" placeholder="Giá ${service.name}">
+                                                                                                </div>
+                                                                                                <div class="col-xs-2">
+                                                                                                    %{--TODO: remove this row, add select box--}%
+                                                                                                    <a class="btn btn-default">DELETE</a>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </g:each>
+
+                                                                                        <div class="form-group">
+                                                                                            <label class="col-xs-2 control-label no-padding-right">Thêm dịch vụ:</label>
+                                                                                            <div class="col-xs-8">
+                                                                                                <g:select name="add_more" from="${room.region.services}" optionValue="name" optionKey="id" class="form-control"></g:select>
+                                                                                            </div>
+                                                                                            <div class="col-xs-2">
+                                                                                                <a class="btn btn-default">Thêm</a>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </g:formRemote>
+                                                                                </div>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="col-sm-6">
-                                                                            <label>Giá điện: </label>
-                                                                            <div class="form-group">
-                                                                                <input type="text" class="form-control" value="region.services.dien">
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-sm-6">
-                                                                            <label>Giá nước:</label>
-                                                                            <div class="form-group">
-                                                                                <input type="text" class="form-control">
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-sm-6">
-                                                                            <label>Ngày thanh toán tiền phòng:</label>
-                                                                            <div class="form-group">
-                                                                                <input type="text" class="form-control">
-                                                                            </div>
-                                                                        </div>
-                                                                    </form>
+                                                                    </div>
+                                                                    <div class="col-md-4 col-sm-4 col-xs-12">
+                                                                        <ul>
+                                                                            <li>ghi chú 1.</li>
+                                                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                                                                            <li>Ut suscipit urna eu lorem blandit fringilla. Curabitur volutpat pulvinar dolor et rutrum. Duis sit amet ullamcorper lacus, vel ultrices purus.</li>
+                                                                        </ul>
+                                                                    </div>
+
 
 
                                                                 </div>
@@ -123,7 +146,14 @@
             //step 1: user
             //TODO: check required
             $("#user_rent_room").submit();
-            console.log('return true')
+            console.log('user')
+            return true;
+        }
+        if($(document).find("#wiredstep2").hasClass("active")) {
+            //step 1: service
+            //TODO: check required
+            $("#saveRoomUsesService").submit();
+            console.log('saveRoomUsesService')
             return true;
         }
     }

@@ -11,13 +11,15 @@ class Service {
         KG(2, "Kilogram"),
         H(3, "Giờ"),
         NG(4, "Người"),
-        PHONG(5, "Phòng")
+        PHONG(5, "Phòng"),
+        CHIEC(6, "Chiếc")
         int id
         String name
         Unit(id, name){this.id = id; this.name = name}
     }
 
-    Region region
+    Service parent
+
     static belongsTo = Room
     static hasMany = [rooms: Room] //cho thuê
 
@@ -30,9 +32,9 @@ class Service {
 
 
     static constraints = {
-        region nullable: false
         unit nullable: false
         currentPrice nullable: false
+        parent nullable: true
         dateCreated()
     }
 

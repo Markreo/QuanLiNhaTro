@@ -72,7 +72,6 @@ class RoomController extends BaseController{
         def roomInstance = Room.get(params.room as long)
         if(roomInstance) {
             println("save for rent")
-            def renters
             def lastname = params.getList('lastname')
             def firstname = params.getList('firstname')
             def birthPlace = params.getList('birthPlace')
@@ -81,9 +80,41 @@ class RoomController extends BaseController{
             def phone = params.getList('phone')
             lastname.eachWithIndex {val,index ->
                 println('val - ' + val)
-                def renter = new Renter(room: roomInstance, lastName: val, firstName: firstname[index], birthPlace: birthPlace[index], birthYear: birthYear[index], userID: userID[index], phone: phone[index]);
-                roomInstance.addToRenters(renter).save(flush: true)
+                roomInstance.addToRenters(new Renter(room: roomInstance,
+                        lastName: val,
+                        firstName: firstname[index],
+                        birthPlace: birthPlace[index],
+                        birthYear: birthYear[index],
+                        userID: userID[index],
+                        phone: phone[index])).save(flush: true)
             }
+            render ([response: 'OK', message: [type: 'success', content: 'Save!']] as JSON)
+        }
+
+    }
+
+    def saveRoomUsesService() {
+        def roomInstance = Room.get(params.room as long)
+        if(roomInstance) {
+            def listServices = Service.findAllByIdInList(params.getList('serviceId'))
+            def listPrice = params.getList('currentPrice')
+            //clone
+            int i = 0
+            def listCurrent = roomInstance.uses.id
+            println(listCurrent)
+            listServices.each { s ->
+                def serviceTemp
+
+                serviceTemp = roomInstance.uses.find{it.parent.id == s.id}
+                println(s.id)
+                if(serviceTemp){
+                    serviceTemp.currentPrice = listPrice[i++] as double
+                    serviceTemp.save(flush: true)
+                } else {
+                    roomInstance.addToUses(new Service(unit: s.unit, name: s.name, currentPrice: listPrice[i++], parent: s))
+                }
+            }
+            roomInstance.save(flush: true)
             render ([response: 'OK', message: [type: 'success', content: 'Save!']] as JSON)
         }
 
