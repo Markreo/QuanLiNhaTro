@@ -41,6 +41,7 @@ class RoomController extends BaseController{
             }
 
             roomInstance.properties = params
+            println("roomInstance " + roomInstance.name)
             if (roomInstance.hasErrors() || !roomInstance.save(flush: true)) {
                 println("err - " + roomInstance.errors)
                 render ([error: true, message: [type: 'error', content: g.renderErrors(bean: roomInstance, as: 'list')]] as JSON)
@@ -68,7 +69,7 @@ class RoomController extends BaseController{
         }
     }
 
-    def saveForRent() {
+    def saveRenter() {
         def roomInstance = Room.get(params.room as long)
         if(roomInstance) {
             println("save for rent")
@@ -115,6 +116,25 @@ class RoomController extends BaseController{
                 }
             }
             roomInstance.save(flush: true)
+            render ([response: 'OK',
+                     message: [type: 'success', content: 'Save!'],
+                     update: [content: g.render(template: '/service/serviceGetValueByType', model: [services: roomInstance.uses]), position: 'getvalueService']] as JSON)
+        }
+    }
+
+
+    def saveDueDate() {
+        def roomInstance = Room.get(params.room as long)
+        if(roomInstance) {
+            roomInstance.dueDate = params.getInt('dueDate')
+
+            roomInstance.addToLeases(roomInstance.convertLease())
+            def roomUsesService = roomInstance.uses
+            roomUsesService.each {
+
+            }
+            roomInstance.save(flush: true)
+
             render ([response: 'OK', message: [type: 'success', content: 'Save!']] as JSON)
         }
 

@@ -43,6 +43,15 @@ function complete_form(data) {
         return;
     }
 
+    if (typeof data.update !== 'undefined') {
+        if (!$.isArray(data.update)) {
+            data.update = $.makeArray(data.update);
+        }
+        $.each(data.update, function (idx, val) {
+            $("#" + data.update[idx].position).html(data.update[idx].content);
+        });
+    }
+
     if(typeof data.close != 'undefined'){
         GoLastTab();
     }

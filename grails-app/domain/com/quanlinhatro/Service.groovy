@@ -20,11 +20,9 @@ class Service {
 
     Service parent
 
-    static belongsTo = Room
-    static hasMany = [rooms: Room] //cho thuê
-
     String name //điện, nước, rác, internet
     Unit unit = Unit.TIME
+    int currentValue
     Double currentPrice
 
     Date dateCreated
@@ -33,6 +31,7 @@ class Service {
 
     static constraints = {
         unit nullable: false
+        currentValue nullable: true
         currentPrice nullable: false
         parent nullable: true
         dateCreated()
@@ -40,6 +39,5 @@ class Service {
 
     static mapping = {
         version(false)
-        rooms joinTable: [name: 'lease',key : 'room_id']
     }
 }

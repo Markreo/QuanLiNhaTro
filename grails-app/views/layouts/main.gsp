@@ -119,6 +119,8 @@ Purchase: http://wrapbootstrap.com
 <script src="${resource(dir: 'assets/js', file: 'beyond.js')}"></script>
 <script src="${resource(dir: 'assets/js/toastr', file: 'toastr.js')}"></script>
 <script src="${resource(dir: 'assets/js', file: 'qlnhatro.js')}"></script>
+<script src="${resource(dir: 'assets/js/datetime', file: 'bootstrap-datepicker.js')}"></script>
+<script src="${resource(dir: 'assets/js/datetime', file: 'moment.js')}"></script>
 </body>
 <!--  /Body -->
 </html>
