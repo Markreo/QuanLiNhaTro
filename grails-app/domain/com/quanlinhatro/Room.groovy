@@ -2,7 +2,11 @@
  * PHÒNG TRỌ
  */
 package com.quanlinhatro
+
+import groovy.transform.ToString
 import static java.util.Calendar.*
+
+@ToString
 class Room extends Base{
     enum Status {
         NEW(0, "Đang trống", "Cho thuê"),
@@ -64,17 +68,31 @@ class Room extends Base{
         return ObjectType.ROOM;
     }
 
-    Lease convertLease(Service service){
-        Lease lease = new Lease(price: service.currentPrice)
-       /* switch (service.unit){
-            case Service.Unit.TIME:
-                lease.value1 = 1
+    def int convertValue1(Service service) {
+        switch (service.unit) {
+            case Service.Unit.NG:
+                return this.renters.size()
                 break
-            case Service.Unit.CHIEC:
-                lease.value1 = service.currentValue
+            case Service.Unit.PHONG:
+                return 1
                 break
-            //TODO:find last service, get value 2 and set for value1 of new lease
-        }*/
-        return lease
+            default:
+                return service.currentValue
+            break
+        }
+        return 0;
+    }
+
+    def int convertValue2(Service service) {
+        switch (service.unit) {
+            case Service.Unit.KGW:
+            case Service.Unit.M3_2:
+                return service.currentValue
+                break
+            default:
+                return 0;
+                break
+        }
+        return 0;
     }
 }

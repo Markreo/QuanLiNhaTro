@@ -3,6 +3,9 @@
  */
 package com.quanlinhatro
 
+import groovy.transform.ToString
+
+@ToString
 class Lease {
 
     static belongsTo = [room: Room]
@@ -17,8 +20,6 @@ class Lease {
 
     static constraints = {
         details nullable: false
-
-
         dateCreated()
     }
 

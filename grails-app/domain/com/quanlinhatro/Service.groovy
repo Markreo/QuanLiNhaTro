@@ -3,8 +3,13 @@
  */
 package com.quanlinhatro
 
+import grails.converters.JSON
+import groovy.transform.ToString
+
+@ToString
 class Service {
 
+    //cái, máy
     enum Unit{
         TIME(0, "Lần"),
         M3(1, "Mét khối"),
@@ -12,10 +17,21 @@ class Service {
         H(3, "Giờ"),
         NG(4, "Người"),
         PHONG(5, "Phòng"),
-        CHIEC(6, "Chiếc")
+        CHIEC(6, "Chiếc"),
+        KGW(7, "Kilowatt"),//điện
+        M3_2(8, "Mét khối nước")//nước
+
         int id
         String name
         Unit(id, name){this.id = id; this.name = name}
+
+        boolean isNEEDGETVALUES() {
+            return this.id in [6, 7, 8]
+        }
+
+        static def GETLIST() {
+            return Unit.values().findAll{it.id in [1, 2, 3, 4, 5, 6]}
+        }
     }
 
     Service parent
@@ -28,6 +44,7 @@ class Service {
     Date dateCreated
     Date lastUpdated
 
+    static transients = ['getStrJSON']
 
     static constraints = {
         unit nullable: false
@@ -39,5 +56,9 @@ class Service {
 
     static mapping = {
         version(false)
+    }
+
+    String getStrJSON(){
+        return ([ name: this.name, unit: this.unit.id, currentPrice: this.currentPrice] as JSON)
     }
 }

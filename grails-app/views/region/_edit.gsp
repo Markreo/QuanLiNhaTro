@@ -84,12 +84,12 @@
                                             <div class="row">
                                                 <div class="col-sm-4 col-xs-4 no-padding-right">
                                                     <div class="form-group">
-                                                        <input name="services.name" type="text" class="form-control" placeholder="Tên dịch vụ" value="Điện" required />
+                                                        <input name="services.name" type="text" class="form-control" placeholder="Tên dịch vụ" value="Điện" readonly />
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-3 col-xs-3 no-padding-right">
                                                     <div class="form-group">
-                                                        <g:select name="services.unit" class="form-control" from="${com.quanlinhatro.Service.Unit.values()}" optionValue="name" value="${com.quanlinhatro.Service.Unit.KG}" required="required"/>
+                                                        <g:select name="services.unit" class="form-control" from="${com.quanlinhatro.Service.Unit.values()}" optionValue="name" value="${com.quanlinhatro.Service.Unit.KGW}" />
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-4 col-xs-4">
@@ -106,12 +106,12 @@
                                             <div class="row">
                                                 <div class="col-sm-4 col-xs-4 no-padding-right">
                                                     <div class="form-group">
-                                                        <input name="services.name" type="text" class="form-control" value="Nước" placeholder="Tên dịch vụ" required />
+                                                        <input name="services.name" type="text" class="form-control" value="Nước" placeholder="Tên dịch vụ" readonly />
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-3 col-xs-3 no-padding-right">
                                                     <div class="form-group">
-                                                        <g:select name="services.unit" class="form-control" from="${com.quanlinhatro.Service.Unit.values()}" optionValue="name" value="${com.quanlinhatro.Service.Unit.M3}" required="required"/>
+                                                        <g:select name="services.unit" class="form-control" from="${com.quanlinhatro.Service.Unit.values()}" optionValue="name" value="${com.quanlinhatro.Service.Unit.M3_2}" required="required"/>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-4 col-xs-4">

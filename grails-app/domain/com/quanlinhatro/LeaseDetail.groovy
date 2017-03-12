@@ -3,13 +3,13 @@ package com.quanlinhatro
 class LeaseDetail {
 
     static belongsTo = [lease: Lease]
-    Service service
+    String services
     int value1
     int value2
     double price
 
     static constraints = {
-        service nullable: false
+        services nullable: false
         lease nullable: false
         value1 nullable: true
         value2 nullable: true
