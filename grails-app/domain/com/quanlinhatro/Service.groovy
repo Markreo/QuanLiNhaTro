@@ -19,7 +19,8 @@ class Service {
         PHONG(5, "Phòng"),
         CHIEC(6, "Chiếc"),
         KGW(7, "Kilowatt"),//điện
-        M3_2(8, "Mét khối nước")//nước
+        M3_2(8, "Mét khối nước"),//nước
+        TIENPHONG(9, "Tiền phòng")// là service mặc địh của từng phòng
 
         int id
         String name

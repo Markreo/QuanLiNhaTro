@@ -22,39 +22,84 @@
 
                                     <a class="btn btn-default margin-left-20" href="${createLink(controller: 'room', action: 'create')}" rel="new-tab"><i class="fa fa-plus"></i> Thêm</a>
 
-                                <div class="tickets-container">
+                                <div class="tickets-container" style="background: white">
                                     <ul class="tickets-list">
                                         <g:each in="${rooms}" var="r" status="i">
-                                            <li class="ticket-item">
-                                                <div class="row">
-                                                    <div class="ticket-user col-md-3 col-sm-12">
-                                                        <img src="${resource(dir:'assets/img', file: 'home_' + r.status.id + '.png')}" class="user-avatar">
-                                                        <span class="user-name">Phòng ${r.name}</span>
-                                                        <span class="user-at">at</span>
-                                                        <span class="user-company">${r.status.name}</span>
+                                            <g:if test="${r.status == com.quanlinhatro.Room.Status.ARERENTING}">
+                                                <li class="ticket-item">
+                                                    <div class="row">
+                                                        <div class="ticket-user col-md-4 col-sm-12">
+                                                            <img src="${resource(dir:'assets/img', file: 'home_' + r.status.id + '.png')}" class="user-avatar">
+                                                            <span class="user-name">Phòng ${r.name}</span>
+                                                            <span class="user-at">-</span>
+                                                            <span class="user-company">${r.status.name}</span>
+                                                        </div>
+                                                        <div class="ticket-time  col-md-3 col-sm-6 col-xs-6">
+                                                            <div class="divider hidden-xs hidden-sm hidden-xs"></div>
+                                                            <i class="fa fa-user"></i>
+                                                            ${r.renters.size()} <span class="time"> người đang thuê</span>
+                                                        </div>
+                                                        <div class="ticket-time  col-md-4 col-sm-6 col-xs-6">
+                                                            <div class="divider hidden-xs hidden-sm hidden-xs"></div>
+                                                            <span class="time"> <g:formatNumber number="${r.leaseThisMonth?.total}" format="###,###,###" />  đến ngày ${r.dueDateThisMonth.format('dd/MM/yyyy')}</span>
+                                                        </div>
+                                                        <div class="ticket-type hidden-sm hidden-xs" style="position: absolute;right: 0; width: 90px">
+                                                            <span class="divider hidden-xs"></span>
+                                                            <span class="type">${r.status.action}</span>
+                                                        </div>
+                                                        <a class="ticket-state bg-darkorange" href="${createLink(controller: 'room', action: 'update', id: r.id)}" rel="new-tab">
+                                                            <i class="fa fa-edit" style="padding-left: 2px; padding-top: 1px"></i>
+                                                        </a>
                                                     </div>
-                                                    <div class="ticket-time  col-md-2 col-sm-6 col-xs-12">
-                                                        <div class="divider hidden-md hidden-sm hidden-xs"></div>
-                                                        <i class="fa fa-user"></i>
-                                                        ${r.renters.size()} <span class="time"> người đang thuê</span>
+                                                </li>
+                                            </g:if>
+                                            <g:if test="${r.status == com.quanlinhatro.Room.Status.NEW}">
+                                                <li class="ticket-item">
+                                                    <div class="row">
+                                                        <div class="ticket-user col-md-4 col-sm-12">
+                                                            <img src="${resource(dir:'assets/img', file: 'home_' + r.status.id + '.png')}" class="user-avatar">
+                                                            <span class="user-name">Phòng ${r.name}</span>
+                                                            <span class="user-at">-</span>
+                                                            <span class="user-company">${r.status.name}  - giá phòng - ghi chú</span>
+                                                        </div>
+                                                        <div class="ticket-type hidden-sm hidden-xs" style="position: absolute;right: 0; width: 90px">
+                                                            <span class="divider hidden-xs"></span>
+                                                            <span class="type">${r.status.action}</span>
+                                                        </div>
+                                                        <a class="ticket-state bg-green" href="${createLink(controller: 'room', action: 'forRent', id: r.id)}" rel="new-tab">
+                                                            <i class="fa fa-arrow-right"></i>
+                                                        </a>
                                                     </div>
-                                                    <div class="ticket-time  col-md-4 col-sm-6 col-xs-12">
-                                                        <div class="divider hidden-md hidden-sm hidden-xs"></div>
-                                                        <span class="time"> 1.000.000đ đến ngày 12/0${i+1}/2017</span>
+                                                </li>
+                                            </g:if>
+                                            <g:if test="${r.status == com.quanlinhatro.Room.Status.MORTGAGED}">
+                                                <li class="ticket-item">
+                                                    <div class="row">
+                                                        <div class="ticket-user col-md-4 col-sm-12">
+                                                            <img src="${resource(dir:'assets/img', file: 'home_' + r.status.id + '.png')}" class="user-avatar">
+                                                            <span class="user-name">Phòng ${r.name}</span>
+                                                            <span class="user-at">-</span>
+                                                            <span class="user-company">${r.status.name}</span>
+                                                        </div>
+                                                        <div class="ticket-time  col-md-3 col-sm-6 col-xs-6">
+                                                            <div class="divider hidden-xs hidden-sm hidden-xs"></div>
+                                                            <i class="fa fa-money"></i>
+                                                            <span class="time"> Đã cọc:  <g:formatNumber number="${r.price}" format="###,###,###" /> </span>
+                                                        </div>
+                                                        <div class="ticket-time  col-md-4 col-sm-6 col-xs-6">
+                                                            <div class="divider hidden-xs hidden-sm hidden-xs"></div>
+                                                            <span class="time"> Ngày đến ${r.dueDateThisMonth.format('dd/MM/yyyy')}</span>
+                                                        </div>
+                                                        <div class="ticket-type hidden-sm hidden-xs" style="position: absolute;right: 0; width: 90px">
+                                                            <span class="divider hidden-xs"></span>
+                                                            <span class="type">${r.status.action}</span>
+                                                        </div>
+                                                        <a class="ticket-state bg-azure"  rel="new-tab">
+                                                            <i class="fa fa-check" style="padding-left: 2px; padding-top: 1px"></i>
+                                                        </a>
                                                     </div>
-                                                    <div class="ticket-time  col-md-2 col-sm-6 col-xs-12">
-                                                        <div class="divider hidden-md hidden-sm hidden-xs"></div>
-                                                        <span class="time"> Số điện: 4320 (32 Số)</span>
-                                                    </div>
-                                                    <div class="ticket-type  col-md-1 col-sm-6 col-xs-12">
-                                                        <span class="divider hidden-xs"></span>
-                                                        <span class="type">${r.status.action}</span>
-                                                    </div>
-                                                    <a class="ticket-state bg-yellow" href="${createLink(controller: 'room', action: 'forRent', id: r.id)}" rel="new-tab">
-                                                        <i class="fa fa-arrow-right"></i>
-                                                    </a>
-                                                </div>
-                                            </li>
+                                                </li>
+                                            </g:if>
                                         </g:each>
 
 

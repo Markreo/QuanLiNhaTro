@@ -27,4 +27,16 @@ class Lease {
         version(false)
         table('lease')
     }
+
+    static transients = ['getTotal']
+
+    int getTotal() {
+        println("lease: " + this)
+        def prices = this.details?.price
+        def sum = 0
+        prices.each {
+            sum += it;
+        }
+        return sum
+    }
 }

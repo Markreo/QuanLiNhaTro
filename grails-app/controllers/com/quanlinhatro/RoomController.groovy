@@ -162,4 +162,14 @@ class RoomController extends BaseController{
         }
 
     }
+
+    def update() {
+        render(template: 'update')
+    }
+
+    def testgetduedate(){
+        def room = Room.get(1)
+
+        render (room.dueDateThisMonth ?: "abc")
+    }
 }

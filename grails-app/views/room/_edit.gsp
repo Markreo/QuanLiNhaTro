@@ -74,7 +74,7 @@
                                             </div>
                                         </div>
                                         <div class="row">
-
+ghi chú
                                         </div>
                                     </g:formRemote>
 
