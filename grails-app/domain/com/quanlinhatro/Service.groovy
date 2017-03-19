@@ -31,7 +31,11 @@ class Service {
         }
 
         static def GETLIST() {
-            return Unit.values().findAll{it.id in [1, 2, 3, 4, 5, 6]}
+            return Unit.values().findAll{it in [TIME, M3, KG, H, NG, PHONG, CHIEC]}
+        }
+
+        static Unit get(long id) {
+            return Unit.values().find {it.id == id}
         }
     }
 
@@ -40,7 +44,7 @@ class Service {
     String name //điện, nước, rác, internet
     Unit unit = Unit.TIME
     int currentValue
-    Double currentPrice
+    Double currentPrice //TODO: int
 
     Date dateCreated
     Date lastUpdated
@@ -60,6 +64,6 @@ class Service {
     }
 
     String getStrJSON(){
-        return ([ name: this.name, unit: this.unit.id, currentPrice: this.currentPrice] as JSON)
+        return ([id: this.id, name: this.name, unit: this.unit.id, currentPrice: this.currentPrice] as JSON)
     }
 }

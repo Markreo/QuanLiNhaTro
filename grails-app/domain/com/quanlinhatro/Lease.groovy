@@ -15,6 +15,10 @@ class Lease {
     Date toDate
     Date fromDate
 
+
+
+//    String note
+
     Date dateCreated
     Date lastUpdated
 
@@ -26,9 +30,10 @@ class Lease {
     static mapping = {
         version(false)
         table('lease')
+//        note type: 'text'
     }
 
-    static transients = ['getTotal']
+    static transients = ['getTotal', 'findDetail']
 
     int getTotal() {
         println("lease: " + this)
@@ -38,5 +43,9 @@ class Lease {
             sum += it;
         }
         return sum
+    }
+
+    LeaseDetail findDetail(Service service) {
+        return this.details.find {it.parseService().id == service.id}
     }
 }

@@ -78,7 +78,7 @@ internet
                                                                                             <div class="col-xs-2">
                                                                                             </div>
                                                                                         </div>
-                                                                                        <g:each in="${room.region.services}" var="service">
+                                                                                        <g:each in="${room.region.listDefault}" var="service">
                                                                                             <div class="form-group">
                                                                                                 <label class="col-xs-2 control-label no-padding-right">${service.name}:</label>
                                                                                                 <g:hiddenField name="serviceId" value="${service.id}"/>
@@ -95,7 +95,7 @@ internet
                                                                                         <div class="form-group">
                                                                                             <label class="col-xs-2 control-label no-padding-right">Thêm dịch vụ:</label>
                                                                                             <div class="col-xs-8">
-                                                                                                <g:select name="add_more" from="${room.region.services}" optionValue="name" optionKey="id" class="form-control"></g:select>
+                                                                                                <g:select name="add_more" from="${room.region.listDefault}" optionValue="name" optionKey="id" class="form-control"></g:select>
                                                                                             </div>
                                                                                             <div class="col-xs-2">
                                                                                                 <a class="btn btn-default">Thêm</a>

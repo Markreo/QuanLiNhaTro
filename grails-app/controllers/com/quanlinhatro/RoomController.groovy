@@ -4,6 +4,7 @@ import grails.converters.JSON
 
 class RoomController extends BaseController{
 
+    def roomService
     def index() {
         redirect( action: 'list')
     }
@@ -93,7 +94,7 @@ class RoomController extends BaseController{
     }
 
     def saveRoomUsesService() {
-        def roomInstance = Room.get(params.room as long)
+        Room roomInstance = Room.get(params.room as long)
         if(roomInstance) {
             ArrayList<Service> listServices = []
             def servicesIds = params.getList('serviceId')
@@ -104,9 +105,7 @@ class RoomController extends BaseController{
             //clone
             int i = 0
             listServices.each { s ->
-                def serviceTemp
-
-                serviceTemp = roomInstance.uses.find{it.parent.id == s.id}
+                def serviceTemp = roomInstance.uses.find{it.parent.id == s.id}
                 if(serviceTemp){
                     serviceTemp.currentPrice = listPrice[i++] as double
                     serviceTemp.save(flush: true)
@@ -114,10 +113,15 @@ class RoomController extends BaseController{
                     roomInstance.addToUses(new Service(unit: s.unit, name: s.name, currentPrice: listPrice[i++], parent: s))
                 }
             }
+
+
+
+
             roomInstance.save(flush: true)
             render ([response: 'OK',
                      message: [type: 'success', content: 'Save!'],
                      update: [content: g.render(template: '/service/serviceGetValueByType', model: [services: roomInstance.uses]), position: 'getvalueService']] as JSON)
+            roomService.createDeafultTIENPHONG(roomInstance)
         }
     }
 
@@ -163,13 +167,37 @@ class RoomController extends BaseController{
 
     }
 
-    def update() {
-        render(template: 'update')
+    def update(long id) {
+        def room = Room.get(id)
+        if(room) {
+            render(template: 'update', model: [room: room])
+        } else {
+            render "Not found!!!"
+        }
     }
 
-    def testgetduedate(){
-        def room = Room.get(1)
 
-        render (room.dueDateThisMonth ?: "abc")
+    def saveUpdateCurrentValue() {
+        println("saveUpdateCurrentValue")
+        def detailID = params.getList('detail')
+        def curentValues = params.getList('curentValue')
+        def details = []
+        int index = 0
+        detailID.each {
+            def detail = LeaseDetail.get(it as long)
+            if(detail.parseInstance().unit != Service.Unit.TIENPHONG){
+                if(detail.updateValue(curentValues[index++] as long)) {
+                    detail.save(flush: true)
+                }
+            } else {
+                if(detail.price != params.getInt('currentPrice')) {
+                    detail.price = params.getInt('currentPrice')
+                    //TODO: update in json string
+                    detail.save(flush: true)
+                }
+            }
+
+        }
+        render ("""<script>location.reload();</script>""")
     }
 }

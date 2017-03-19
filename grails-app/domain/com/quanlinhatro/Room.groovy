@@ -28,6 +28,8 @@ class Room extends Base{
                       leases: Lease, //cho thuê những dịch vụ này//lease
                       uses: Service] //những dịch vụ sẽ tính (cho tháng sau)
 
+    int electrics //current, to service
+    int waters //current, to service
     double price //to service
     double amount = 0
 
@@ -54,15 +56,11 @@ class Room extends Base{
         uses joinTable: [name: 'room_uses_service', key: 'service_id', column:'room_id']
     }
 
-    static transients = ['getDueDateThisMonth', 'convertValue1', 'convertValue2','getLeaseThisMonth']
+    static transients = ['getDueDateThisMonth', 'convertValue1', 'convertValue2','getLeaseThisMonth', 'getElectricDetail', 'getWaterDetail', 'getUseService']
 
     Date getDueDateThisMonth() {
         def cal = Calendar.instance
         def days = Calendar.instance.getActualMaximum(Calendar.DAY_OF_MONTH) as int
-        println("get due date this month ------------------------------ " + new Date(year: cal[YEAR], month: cal[MONTH],date: dueDate < days ? dueDate : days).toString())
-        println("year: " + cal[YEAR])
-        println("month: " + cal[MONTH])
-        println("date:2 " + (dueDate < days ? dueDate : days).toString())
         return new Date().copyWith(
                 year: cal[YEAR],
                 month: dueDate < cal[DATE] ? cal[MONTH] + 1 : cal[MONTH] ,
@@ -108,5 +106,17 @@ class Room extends Base{
 
     Lease getLeaseThisMonth() {
         return Lease.findByRoomAndFromDateLessThanEqualsAndToDateGreaterThanEquals(this, new Date(),new Date())
+    }
+
+    def getElectricDetail() {
+        return this.leaseThisMonth?.details?.find{it.parseService()?.unit == Service.Unit.KGW}
+    }
+
+    def getWaterDetail() {
+        return this.leaseThisMonth?.details?.find{it.parseService()?.unit == Service.Unit.M3_2}
+    }
+
+    def getUseService(Service.Unit unit) {
+        return this.leaseThisMonth?.details?.find{it.parseService()?.unit == unit}
     }
 }

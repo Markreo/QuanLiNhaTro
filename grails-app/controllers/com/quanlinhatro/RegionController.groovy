@@ -39,9 +39,13 @@ class RegionController extends BaseController {
             def services = params.get('services')
             def count =  services?.unit?.size()
             count.times {
-                regionInstance.addToServices(new Service(unit: services.unit[it], name: services.name[it], currentPrice: services.currentPrice[it], region: regionInstance)).save(flush: true)
+                regionInstance.addToDefaults(new Service(unit: services.unit[it], name: services.name[it], currentPrice: services.currentPrice[it], region: regionInstance))
             }
 
+            //default: tiền phòng
+            regionInstance.addToDefaults(new Service(unit: Service.Unit.TIENPHONG, name: "Tiền phòng", currentPrice: 0, region: regionInstance))
+
+            regionInstance.save(flush: true)
             //TODO: check error
 
             render ([close: 'this', code: 'update_region',  message: [type: 'success', content: regionInstance.name + " đã đuợc tạo!"]] as JSON)

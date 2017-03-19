@@ -1,16 +1,17 @@
+<%@ page import="com.quanlinhatro.Service" %>
 <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="row">
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <div class="databox bg-white radius-bordered">
                     <div class="databox-left bg-themesecondary">
-                        <div class="databox-piechart">
-                            <div data-toggle="easypiechart" class="easyPieChart" data-barcolor="#fff" data-linecap="butt" data-percent="50" data-animate="500" data-linewidth="3" data-size="47" data-trackcolor="rgba(255,255,255,0.1)" style="width: 47px; height: 47px; line-height: 47px;"><span class="white font-90">1204</span><canvas width="47" height="47"></canvas></div>
+                        <div class="databox-piechart" style="vertical-align: middle; text-align: center; line-height: 45px">
+                            <span>${room.electricDetail?.value2}</span>
                         </div>
                     </div>
                     <div class="databox-right">
                         <span class="databox-number themesecondary">Số điện</span>
-                        <div class="databox-text darkgray">Cập nhật ngày ${new Date().format('dd/MM/yyyy')}</div>
+                        <div class="databox-text darkgray">Cập nhật ngày ${room.electricDetail.lastUpdated.format('dd/MM/yyyy')}</div>
                         <div class="databox-stat themesecondary radius-bordered">
                             <i class="stat-icon icon-lg fa fa-edit"></i>
                         </div>
@@ -20,8 +21,8 @@
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <div class="databox bg-white radius-bordered">
                     <div class="databox-left bg-themethirdcolor">
-                        <div class="databox-piechart">
-                            <div data-toggle="easypiechart" class="easyPieChart" data-barcolor="#fff" data-linecap="butt" data-percent="15" data-animate="500" data-linewidth="3" data-size="47" data-trackcolor="rgba(255,255,255,0.2)" style="width: 47px; height: 47px; line-height: 47px;"><span class="white font-90">46</span><canvas width="47" height="47"></canvas></div>
+                        <div class="databox-piechart" style="vertical-align: middle; text-align: center; line-height: 45px">
+                            ${room.waterDetail?.value2}
                         </div>
                     </div>
                     <div class="databox-right">
@@ -78,9 +79,12 @@
                         </div>
                     </div>
                     <div class="box-progress">
-                        <div class="progress-handle">day 20</div>
+                        <g:set var="percent" value="${java.util.Calendar.instance[Calendar.DATE] * 100 / java.util.Calendar.instance.getActualMaximum(Calendar.DAY_OF_MONTH)}"/>
+                        <g:set var="dueDate" value="${room.dueDate * 100 / java.util.Calendar.instance.getActualMaximum(Calendar.DAY_OF_MONTH)}"/>
+                        <div class="progress-handle bg-darkorange" style="left: -webkit-calc(${dueDate}% - 35px);left: -moz-calc(${dueDate}% - 35px);left: calc(${dueDate}% - 35px); width: 80px !important;">Hạn ngày ${room.dueDate}</div>
+                        <div class="progress-handle" style="left: -webkit-calc(${percent}% - 35px);left: -moz-calc(${percent}% - 35px);left: calc(${percent}% - 35px);">Ngày ${java.util.Calendar.instance[Calendar.DATE]}</div>
                         <div class="progress progress-xs progress-no-radius bg-whitesmoke">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="${java.util.Calendar.instance[Calendar.DATE]}" aria-valuemin="1" aria-valuemax="${java.util.Calendar.instance.getActualMaximum(Calendar.DAY_OF_MONTH)}" style="width: ${percent}%">
                             </div>
                         </div>
                     </div>
@@ -88,13 +92,13 @@
                         <div class="tabbable">
                             <ul class="nav nav-tabs tabs-flat  nav-justified" id="myTab11">
                                 <li class="active">
-                                    <a data-toggle="tab" href="#realtime">
+                                    <a data-toggle="tab" href="#tab1_value">
                                         Các khoản cần thanh toán
                                     </a>
                                 </li>
                                 <li>
                                     <a data-toggle="tab" href="#visits">
-                                        Người thuê
+                                        Bảng Giá
                                     </a>
                                 </li>
 
@@ -110,11 +114,64 @@
                                 </li>
                             </ul>
                             <div class="tab-content tabs-flat no-padding">
-                                <div id="realtime" class="tab-pane active padding-5 animated fadeInUp">
-                                    Xe:<br/>
-                                    Điện: <br/>
-                                    Nước <br/>
-                                    ...
+                                <div id="tab1_value" class="tab-pane active padding-5 animated fadeInUp">
+                                    <div class="horizontal-space"></div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padding-bottom-20">
+                                        <g:formRemote class="form-horizontal" name="update_currentValue" url="[controller: 'room', action: 'saveUpdateCurrentValue']" update="update_currentValue">
+                                            <div id="update_currentValue"></div>
+                                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 padding-15 bordered-ddd" style="border-radius: 5px">
+                                                <div class="form-title">
+                                                    Lượng sử dụng tháng này:
+                                                </div>
+
+                                                    <g:each in="${room.leaseThisMonth.details.sort{it.id}}" var="detail">
+                                                        <div class="form-group">
+                                                            <div class="col-sm-12">
+                                                                <label>${detail.parseInstance().name}:</label>
+                                                                <g:hiddenField name="detail" value="${detail.id}"/>
+                                                                <span class="input-icon icon-right">
+                                                                    <g:if test="${detail.parseInstance().unit == com.quanlinhatro.Service.Unit.TIENPHONG}">
+                                                                        <input name="currentPrice" type="text" class="form-control" value="${detail.price}">
+                                                                    </g:if>
+                                                                    <g:else>
+                                                                        <input name="curentValue" type="text" class="form-control" value="${detail.value2 != 0 ? detail.value2 : detail.value1}">
+                                                                    </g:else>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </g:each>
+
+
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                <div class="form-title">
+                                                    Tạm tính: %{--TODO: make table--}%
+                                                </div>
+                                                <g:each in="${room.leaseThisMonth.details.sort{it.id}}" var="detail">
+                                                    <div class="form-group">
+                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                            <label class="col-md-3 no-padding">${detail.parseInstance().name}</label>
+                                                            <g:set var="used" value="${Math.abs(detail.value2 - detail.value1)}"/>
+                                                            <label class="col-md-5 no-padding-right text-align-right">${used != 1 ? used + "x" : ""} ${detail.parseInstance().currentPrice} = </label>
+                                                            <label class="col-md-4 no-padding-right text-align-right">${detail.price} đ</label>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                    </div>
+                                                </g:each>
+
+                                                <div class="form-title">
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="col-sm-12">
+                                                        <label class="col-md-8">Tổng cộng:</label>
+                                                        <label class="col-md-4 no-padding-right text-align-right"><g:formatNumber number="${room.leaseThisMonth.total}" format="###,###,###"/> đ</label>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </g:formRemote>
+                                    </div>
+                                    <div class="horizontal-space"></div>
                                 </div>
                                 <div id="visits" class="tab-pane  animated fadeInUp">
                                     <div class="row">
@@ -202,53 +259,28 @@
                     </div>
                     <div class="box-visits">
                         <div class="row">
-                            <div class="col-lg-4 col-sm-4 col-xs-12">
-                                <div class="notification">
+                            <div class="col-lg-6 col-sm-6 col-xs-12">
+                                <div class="notification" style="cursor: pointer" >
                                     <div class="clearfix">
                                         <div class="notification-icon">
-                                            <i class="fa fa-gift palegreen bordered-1 bordered-palegreen"></i>
+                                            <i class="fa fa-check themeprimary bordered-1 bordered-themeprimary"></i>
                                         </div>
                                         <div class="notification-body">
-                                            <span class="title">Kate birthday party</span>
-                                            <span class="description">08:30 pm</span>
-                                        </div>
-                                        <div class="notification-extra">
-                                            <i class="fa fa-calendar palegreen"></i>
-                                            <i class="fa fa-clock-o palegreen"></i>
-                                            <span class="description">at home</span>
+                                            <span class="title">Kết sổ</span>
+                                            <span class="description">Xong tháng này, chuyển sang tháng tiếp theo</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-sm-4 col-xs-12">
-                                <div class="notification">
+                            <div class="col-lg-6 col-sm-6 col-xs-12">
+                                <div class="notification" style="cursor: pointer" onclick="submitThisPage()">
                                     <div class="clearfix">
                                         <div class="notification-icon">
-                                            <i class="fa fa-check azure bordered-1 bordered-azure"></i>
+                                            <i class="fa fa-save bordered-1 bordered-green green"></i>
                                         </div>
                                         <div class="notification-body">
-                                            <span class="title">Hanging out with kids</span>
-                                            <span class="description">03:30 pm - 05:15 pm</span>
-                                        </div>
-                                        <div class="notification-extra">
-                                            <i class="fa fa-clock-o azure"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-sm-4 col-xs-12">
-                                <div class="notification">
-                                    <div class="clearfix">
-                                        <div class="notification-icon">
-                                            <i class="fa fa-phone bordered-1 bordered-orange orange"></i>
-                                        </div>
-                                        <div class="notification-body">
-                                            <span class="title">Meeting with Patty</span>
-                                            <span class="description">01:00 pm</span>
-                                        </div>
-                                        <div class="notification-extra">
-                                            <i class="fa fa-clock-o orange"></i>
-                                            <span class="description">office</span>
+                                            <span class="title">Cập nhật</span>
+                                            <span class="description">Cập nhật mọi thông tin trên</span>
                                         </div>
                                     </div>
                                 </div>
@@ -374,3 +406,13 @@
         </div>
     </div>
 </div>
+
+<script>
+    function submitThisPage() {
+        if($("#tab1_value").hasClass('active')) {
+            //TODO:CHECK value
+            console.log("update_currentValue submit")
+            $("#update_currentValue").submit()
+        }
+    }
+</script>
