@@ -35,9 +35,9 @@ class Lease {
 
     static transients = ['getTotal', 'findDetail']
 
-    int getTotal() {
+    long getTotal() {
         println("lease: " + this)
-        def prices = this.details?.price
+        def prices = this.details?.total
         def sum = 0
         prices.each {
             sum += it;

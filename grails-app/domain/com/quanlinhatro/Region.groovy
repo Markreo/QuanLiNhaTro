@@ -34,7 +34,6 @@ class Region extends Base {
     static transients = ['getListDefault']
 
     ArrayList<Service> getListDefault() {
-        println("debug here")
         return defaults.findAll {it.unit != Service.Unit.TIENPHONG}
     }
 }

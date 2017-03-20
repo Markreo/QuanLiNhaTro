@@ -8,7 +8,7 @@ class Expenditure {
     ObjectType objectName
     long objectID
 
-    Double quantity
+    long quantity
     Service service
 
     Date dateCreated
@@ -24,7 +24,7 @@ class Expenditure {
         dateCreated()
     }
 
-    Double total() {
+    Long total() {
         if(service) {
             return quantity * service.unitPrice
         }

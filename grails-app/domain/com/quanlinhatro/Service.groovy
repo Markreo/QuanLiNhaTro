@@ -43,8 +43,8 @@ class Service {
 
     String name //điện, nước, rác, internet
     Unit unit = Unit.TIME
-    int currentValue
-    Double currentPrice //TODO: int
+    long currentValue
+    long currentPrice //TODO: int
 
     Date dateCreated
     Date lastUpdated

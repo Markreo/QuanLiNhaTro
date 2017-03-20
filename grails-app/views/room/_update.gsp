@@ -97,7 +97,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a data-toggle="tab" href="#visits">
+                                    <a data-toggle="tab" href="#tab2_price">
                                         Bảng Giá
                                     </a>
                                 </li>
@@ -131,7 +131,7 @@
                                                                 <g:hiddenField name="detail" value="${detail.id}"/>
                                                                 <span class="input-icon icon-right">
                                                                     <g:if test="${detail.parseInstance().unit == com.quanlinhatro.Service.Unit.TIENPHONG}">
-                                                                        <input name="currentPrice" type="text" class="form-control" value="${detail.price}">
+                                                                        <input name="currentPrice" type="text" class="form-control" value="${detail.total}">
                                                                     </g:if>
                                                                     <g:else>
                                                                         <input name="curentValue" type="text" class="form-control" value="${detail.value2 != 0 ? detail.value2 : detail.value1}">
@@ -153,7 +153,7 @@
                                                             <label class="col-md-3 no-padding">${detail.parseInstance().name}</label>
                                                             <g:set var="used" value="${Math.abs(detail.value2 - detail.value1)}"/>
                                                             <label class="col-md-5 no-padding-right text-align-right">${used != 1 ? used + "x" : ""} ${detail.parseInstance().currentPrice} = </label>
-                                                            <label class="col-md-4 no-padding-right text-align-right">${detail.price} đ</label>
+                                                            <label class="col-md-4 no-padding-right text-align-right">${detail.total} đ</label>
                                                         </div>
                                                         <div class="clearfix"></div>
                                                     </div>
@@ -173,11 +173,9 @@
                                     </div>
                                     <div class="horizontal-space"></div>
                                 </div>
-                                <div id="visits" class="tab-pane  animated fadeInUp">
+                                <div id="tab2_price" class="tab-pane  animated fadeInUp">
                                     <div class="row">
-                                        <div class="col-lg-12 chart-container">
-                                            <div id="dashboard-chart-visits" class="chart chart-lg no-margin" style="width: 100%; padding: 0px; position: relative;"><canvas class="flot-base" width="100" height="250" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 100px; height: 250px;"></canvas><div class="flot-text" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; font-size: smaller; color: rgb(84, 84, 84);"><div class="flot-x-axis flot-x1-axis xAxis x1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;"><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 20px; top: 250px; left: 20px; text-align: center;">5</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 20px; top: 250px; left: 49px; text-align: center;">10</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 20px; top: 250px; left: 78px; text-align: center;">15</div></div></div><canvas class="flot-overlay" width="100" height="250" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 100px; height: 250px;"></canvas></div>
-                                        </div>
+
                                     </div>
 
                                 </div>

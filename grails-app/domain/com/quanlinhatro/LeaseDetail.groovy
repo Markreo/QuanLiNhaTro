@@ -8,9 +8,9 @@ class LeaseDetail {
 
     static belongsTo = [lease: Lease]
     String services
-    int value1
-    int value2
-    double price //int
+    long value1
+    long value2
+    long total
 
     Date dateCreated
     Date lastUpdated
@@ -20,7 +20,7 @@ class LeaseDetail {
         lease nullable: false
         value1 nullable: true
         value2 nullable: true
-        price nullable: true
+        total nullable: true
         dateCreated()
     }
 
@@ -57,7 +57,7 @@ class LeaseDetail {
         }
 
         if(update) {
-            this.price = this.parseInstance().currentPrice * Math.abs(value2 - value1)
+            this.total = this.parseInstance().currentPrice * Math.abs(value2 - value1)
         }
 
         return update

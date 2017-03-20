@@ -137,7 +137,7 @@ class RoomController extends BaseController{
             }
             def values = params.getList('value')
             services.eachWithIndex {service, index ->
-                service.currentValue = values[index] as int
+                service.currentValue = values[index] as long
                 service.save(flush: true)
             }
             //save duedate
@@ -152,7 +152,7 @@ class RoomController extends BaseController{
             def serviceUses = roomInstance.uses
             serviceUses.each {service->
                 def detail = new LeaseDetail(lease: lease, services: service.strJSON, value1: roomInstance.convertValue1(service), value2: roomInstance.convertValue2(service))
-                detail.price = Math.abs(detail.value2 - detail.value1)*service.currentPrice
+                detail.total = Math.abs(detail.value2 - detail.value1)*service.currentPrice
                 lease.addToDetails(detail)
             }
             lease.save(flush: true)
@@ -190,8 +190,9 @@ class RoomController extends BaseController{
                     detail.save(flush: true)
                 }
             } else {
-                if(detail.price != params.getInt('currentPrice')) {
-                    detail.price = params.getInt('currentPrice')
+                if(detail.total != params.getLong('currentPrice')) {
+                    println   params.'currentPrice'
+                    detail.total = params.getLong('currentPrice')
                     //TODO: update in json string
                     detail.save(flush: true)
                 }

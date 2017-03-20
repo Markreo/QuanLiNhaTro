@@ -28,10 +28,8 @@ class Room extends Base{
                       leases: Lease, //cho thuê những dịch vụ này//lease
                       uses: Service] //những dịch vụ sẽ tính (cho tháng sau)
 
-    int electrics //current, to service
-    int waters //current, to service
-    double price //to service
-    double amount = 0
+    long price //to service
+    long amount = 0
 
     int dueDate = 0 //day of month
 
