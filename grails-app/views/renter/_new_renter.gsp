@@ -7,7 +7,7 @@
             <div class="col-sm-5">
                 <div class="form-group">
                     <span class="input-icon icon-right">
-                        <input name="firstname" type="text" class="form-control" placeholder="Họ & Tên đệm">
+                        <input name="firstName" type="text" class="form-control" placeholder="Họ & Tên đệm">
                         <i class="fa fa-user themeprimary"></i>
                     </span>
                 </div>
@@ -15,7 +15,7 @@
             <div class="col-sm-5">
                 <div class="form-group">
                     <span class="input-icon icon-right ">
-                        <input name="lastname" type="text" class="form-control" placeholder="Tên">
+                        <input name="lastName" type="text" class="form-control" placeholder="Tên">
                         <i class="fa fa-user themeprimary"></i>
                     </span>
                 </div>

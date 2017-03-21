@@ -3,6 +3,7 @@ select {
     -moz-appearance: none;
     appearance: none;
     background: url("./angle-down.png") 96% / 15% no-repeat #eee;
+    border-radius: 0 !important;
 }
 
 #page-body > .col-lg-12{
@@ -78,3 +79,14 @@ select {
     color: rgba(38, 38, 38, 0.64);
 }
 
+.modal-header {
+    padding: 7px 15px;
+}
+
+.modal-header .modal-title{
+    font-size: 14px;
+}
+
+.modal-footer {
+    padding: 7px 0px;
+}

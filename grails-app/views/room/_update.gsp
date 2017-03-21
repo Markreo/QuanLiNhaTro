@@ -103,13 +103,13 @@
                                 </li>
 
                                 <li>
-                                    <a data-toggle="tab" id="contacttab" href="#bandwidth">
-                                        Bandwidth
+                                    <a data-toggle="tab" id="contacttab" href="#tab3_history">
+                                        Lịch sử
                                     </a>
                                 </li>
                                 <li>
-                                    <a data-toggle="tab" href="#sales">
-                                        Sales
+                                    <a data-toggle="tab" href="#tab4_setting">
+                                        Cài đặt
                                     </a>
                                 </li>
                             </ul>
@@ -119,7 +119,7 @@
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padding-bottom-20">
                                         <g:formRemote class="form-horizontal" name="update_currentValue" url="[controller: 'room', action: 'saveUpdateCurrentValue']" update="update_currentValue">
                                             <div id="update_currentValue"></div>
-                                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 padding-15 bordered-ddd" style="border-radius: 5px">
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 padding-15 bordered-ddd" style="border-radius: 5px">
                                                 <div class="form-title">
                                                     Lượng sử dụng tháng này:
                                                 </div>
@@ -143,7 +143,7 @@
 
 
                                             </div>
-                                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                 <div class="form-title">
                                                     Tạm tính: %{--TODO: make table--}%
                                                 </div>
@@ -167,6 +167,11 @@
                                                         <label class="col-md-4 no-padding-right text-align-right"><g:formatNumber number="${room.leaseThisMonth.total}" format="###,###,###"/> đ</label>
                                                     </div>
                                                 </div>
+                                                <div class="form-group pull-right">
+                                                    <div class="col-sm-12">
+                                                        <a class="btn btn-default"><i class="fa fa-envelope-o"></i> Thông báo tiền phòng</a>
+                                                    </div>
+                                                </div>
 
                                             </div>
                                         </g:formRemote>
@@ -174,18 +179,86 @@
                                     <div class="horizontal-space"></div>
                                 </div>
                                 <div id="tab2_price" class="tab-pane  animated fadeInUp">
-                                    <div class="row">
 
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padding-top-20 padding-bottom-20">
+                                        <div id="update_price">
+                                            <g:if test="${flash.message}">
+                                                <div class="alert alert-success fade in">
+                                                    <button class="close" data-dismiss="alert">
+                                                        ×
+                                                    </button>
+                                                    ${flash.message}
+                                                </div>
+                                            </g:if>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 bordered-ddd" style="border-radius: 5px">
+                                            <g:formRemote name="saveRoomUsesService" url="[controller: 'room', action: 'saveRoomUsesService']" class="form-horizontal" role="form" onSuccess="returnSaveRoomUseService(data);" update="update_price">
+                                                <g:hiddenField name="room" value="${room.id}"/>
+                                                <div class="form-title">
+                                                    Giá các khoản
+                                                </div>
+                                                <g:each in="${room.uses}" var="service">
+                                                    <div class="form-group">
+                                                        <div class="col-sm-12">
+                                                            <label>${service.name}:</label>
+                                                            <a href="javascript:void(0);" class="pull-right danger">Xóa</a>
+                                                            <g:hiddenField name="serviceId" value="${service.id}"/>
+                                                            <span class="input-icon icon-right">
+                                                            <input name="currentPrice" type="text" class="form-control" value="${room.uses.find {it.parent.id == service.id}?.currentPrice ?: service?.currentPrice}" placeholder="Giá ${service.name}">
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </g:each>
+                                            </g:formRemote>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <g:formRemote name="saveAddDetail" url="[controller: 'leaseDetail', action: 'saveDetail']" class="form-horizontal" update="update_price">
+                                                <g:hiddenField name="room" value="${room.id}"/>
+                                                <div class="form-title">
+                                                    Thêm
+                                                    <div class="pull-right">
+                                                    <label class="control-label padding-bottom-10 margin-bottom-10">Chỉ tháng này</label>
+                                                    <label>
+                                                        <input name="onlyThisMonth" class="checkbox-slider toggle colored-blue" type="checkbox" checked onchange="onlythismonth($(this))">
+                                                        <span class="text"></span>
+                                                    </label>
+                                                </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="col-sm-12">
+                                                        %{--Add a detail--}%
+                                                        <label>Tên:</label>
+                                                        <span class="input-icon icon-right">
+                                                            <input name="name" type="text" class="form-control" placeholder="Nhập tên vào đây"/>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div id="onlyThisMonth"></div>
+                                                <div class="form-group">
+                                                    <div class="col-sm-12">
+                                                        <label>Số tiền:</label>
+                                                        <span class="input-icon icon-right">
+                                                            <input name="total" type="text" class="form-control" placeholder="Nhập số tiền vào đây"/>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group pull-right">
+                                                    <div class="col-sm-12 ">
+                                                        <button type="submit" form="saveAddDetail" class="btn btn-default"><i class="fa fa-save"></i> Save</button>
+                                                    </div>
+                                                </div>
+                                            </g:formRemote>
+                                        </div>
                                     </div>
 
                                 </div>
 
-                                <div id="bandwidth" class="tab-pane padding-10 animated fadeInUp">
+                                <div id="tab3_history" class="tab-pane padding-10 animated fadeInUp">
                                     <div class="databox-sparkline bg-themeprimary">
                                         <span id="dashboard-bandwidth-chart" data-sparkline="compositeline" data-height="250px" data-width="100%" data-linecolor="#fff" data-secondlinecolor="#eee" data-fillcolor="rgba(255,255,255,.1)" data-secondfillcolor="rgba(255,255,255,.25)" data-spotradius="0" data-spotcolor="#fafafa" data-minspotcolor="#fafafa" data-maxspotcolor="#ffce55" data-highlightspotcolor="#fff" data-highlightlinecolor="#fff" data-linewidth="2" data-secondlinewidth="2" data-composite="500, 400, 100, 450, 300, 200, 100, 200"><canvas width="786" height="250" style="display: inline-block; width: 786px; height: 250px; vertical-align: top;"></canvas></span>
                                     </div>
                                 </div>
-                                <div id="sales" class="tab-pane animated fadeInUp no-padding-bottom" style="padding:20px 20px 0 20px;">
+                                <div id="tab4_setting" class="tab-pane animated fadeInUp no-padding-bottom" style="padding:20px 20px 0 20px;">
                                     <div class="row">
                                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                                             <div class="databox databox-xlg databox-vertical databox-inverted databox-shadowed">
@@ -292,115 +365,55 @@
     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
         <div class="orders-container">
             <div class="orders-header">
-                <h6>Người thuê phòng</h6>
+                <h6>Người thuê phòng (${room.renters.size()})</h6>
             </div>
             <ul class="orders-list">
-                <li class="order-item">
-                    <div class="row">
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 item-left">
-                            <div class="item-booker">Nguyễn Văn Giáp</div>
-                            <div class="item-time">
-                                <i class="fa fa-calendar"></i>
-                                <span>10/05/1994 -Bình Phước</span>
+                <g:each in="${room.renters.sort{it.id}}" var="renter">
+                    <li class="order-item">
+                        <div class="row">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 item-left">
+                                <div class="item-booker">${renter.fullname}</div>
+                                <div class="item-time">
+                                    <i class="fa fa-map-marker"></i>
+                                    <span>${renter.birthPlace}</span> - ${renter.birthYear}
+
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 item-right">
+                                <div class="item-price">
+                                    <span class="price padding-right-10">${renter.sex.name}</span>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 item-right">
-                            <div class="item-price">
-                                <span class="price">01676112012</span>
-                            </div>
-                        </div>
-                    </div>
-                    <a class="item-more" href="">
-                        <i></i>
-                    </a>
-                </li>
-                <li class="order-item top">
-                    <div class="row">
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 item-left">
-                            <div class="item-booker">Steve Lewis</div>
-                            <div class="item-time">
-                                <i class="fa fa-calendar"></i>
-                                <span>2 hours ago</span>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 item-right">
-                            <div class="item-price">
-                                <span class="currency">$</span>
-                                <span class="price">620</span>
-                            </div>
-                        </div>
-                    </div>
-                    <a class="item-more" href="">
-                        <i></i>
-                    </a>
-                </li>
-                <li class="order-item">
-                    <div class="row">
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 item-left">
-                            <div class="item-booker">John Ford</div>
-                            <div class="item-time">
-                                <i class="fa fa-calendar"></i>
-                                <span>Today 8th July</span>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 item-right">
-                            <div class="item-price">
-                                <span class="currency">$</span>
-                                <span class="price">220</span>
-                            </div>
-                        </div>
-                    </div>
-                    <a class="item-more" href="">
-                        <i></i>
-                    </a>
-                </li>
-                <li class="order-item">
-                    <div class="row">
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 item-left">
-                            <div class="item-booker">Kim Basinger</div>
-                            <div class="item-time">
-                                <i class="fa fa-calendar"></i>
-                                <span>Yesterday 7th July</span>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 item-right">
-                            <div class="item-price">
-                                <span class="currency">$</span>
-                                <span class="price">400</span>
-                            </div>
-                        </div>
-                    </div>
-                    <a class="item-more" href="">
-                        <i></i>
-                    </a>
-                </li>
-                <li class="order-item">
-                    <div class="row">
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 item-left">
-                            <div class="item-booker">Steve Lewis</div>
-                            <div class="item-time">
-                                <i class="fa fa-calendar"></i>
-                                <span>5th July</span>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 item-right">
-                            <div class="item-price">
-                                <span class="currency">$</span>
-                                <span class="price">340</span>
-                            </div>
-                        </div>
-                    </div>
-                    <a class="item-more" href="">
-                        <i></i>
-                    </a>
-                </li>
+                        <a class="item-more" href="">
+                            <i></i>
+                        </a>
+                    </li>
+                </g:each>
             </ul>
             <div class="orders-footer">
                 <a class="show-all" href=""><i class="fa fa-angle-down"></i> Xem lịch sử thuê phòng</a>
                 <div class="help">
-                    <a href=""><i class="fa fa-question"></i></a>
+                    <a href="${createLink(controller: 'renter', action: 'addRenter', params: [room: room.id])}" id="update_add_renter"><i class="fa fa-plus"></i></a>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+
+<div id="onlyThisMonth_html" style="display: none">
+    <div class="form-group">
+        <div class="col-sm-8 no-padding-right">
+            <label>Đơn giá:</label>
+            <span class="input-icon icon-right">
+                <input type="text" name="currentPrice" class="form-control" placeholder="Đơn giá"/>
+            </span>
+        </div>
+        <div class="col-sm-4">
+            <label>Đơn vị:</label>
+            <span class="input-icon icon-right">
+                <g:select class="form-control" from="${com.quanlinhatro.Service.Unit.GETLIST()}" name="unit" optionValue="name"/>
+            </span>
         </div>
     </div>
 </div>
@@ -413,4 +426,26 @@
             $("#update_currentValue").submit()
         }
     }
+
+    function onlythismonth(_self) {
+        var val = _self.is(":checked")
+        if(val) {
+            $("#onlyThisMonth").html('')
+        } else{
+            $("#onlyThisMonth").html($("#onlyThisMonth_html").html())
+        }
+    }
+
+    $(document).on('click','#update_add_renter',function (e) {
+        e.preventDefault()
+        var url = this.href
+        $.post(url, function(html) {
+            bootbox.dialog({
+                message: html,
+                title: 'Thêm người thuê phòng',
+                width: '700px'
+            })
+        })
+    })
+
 </script>

@@ -39,6 +39,12 @@ class Renter extends Base {
         version(false)
     }
 
+    static transients = ['getFullname']
+
+    String getFullname() {
+        return firstName + " " + lastName
+    }
+
     @Override
     ObjectType objectType() {
         return ObjectType.RENTER;

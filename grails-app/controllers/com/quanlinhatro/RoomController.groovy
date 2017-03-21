@@ -73,8 +73,8 @@ class RoomController extends BaseController{
         def roomInstance = Room.get(params.room as long)
         if(roomInstance) {
             println("save for rent")
-            def lastname = params.getList('lastname')
-            def firstname = params.getList('firstname')
+            def lastname = params.getList('lastName')
+            def firstname = params.getList('firstName')
             def birthPlace = params.getList('birthPlace')
             def birthYear = params.getList('birthYear')
             def userID = params.getList('userID')

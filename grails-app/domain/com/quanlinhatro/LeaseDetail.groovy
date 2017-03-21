@@ -38,7 +38,7 @@ class LeaseDetail {
 
     Service parseInstance() {
         def serviceInstance = new JsonSlurper().parseText(this.services)
-        return new Service(name: serviceInstance.name, unit: Service.Unit.get(serviceInstance.unit), currentPrice: serviceInstance.currentPrice,currentValue: Math.abs(this.value2 - this.value1))
+        return new Service(name: serviceInstance?.name ?: null, unit: Service.Unit.get(serviceInstance?.unit) ?: null, currentPrice: serviceInstance?.currentPrice ?: null, currentValue: Math.abs(this.value2 - this.value1))
     }
 
     boolean updateValue(long value){

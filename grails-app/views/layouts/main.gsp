@@ -40,6 +40,8 @@ Purchase: http://wrapbootstrap.com
 
 	<script src="${resource(dir: 'assets/js/fuelux/wizard', file: 'wizard-custom.js')}"></script>
 
+	<script src="${resource(dir: 'assets/js/bootbox', file: 'bootbox.js')}"></script>
+
 </head>
 <!-- /Head -->
 <!-- Body -->
