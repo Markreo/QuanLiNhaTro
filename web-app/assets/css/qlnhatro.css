@@ -90,3 +90,8 @@ select {
 .modal-footer {
     padding: 7px 0px;
 }
+
+.page-sidebar .sidebar-menu a {
+    height: 45px !important;
+    padding-top:4px !important;
+}

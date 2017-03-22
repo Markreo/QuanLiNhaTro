@@ -30,7 +30,7 @@
                                                     <div class="row">
                                                         <div class="ticket-user col-md-4 col-sm-12">
                                                             <img src="${resource(dir:'assets/img', file: 'home_' + r.status.id + '.png')}" class="user-avatar">
-                                                            <span class="user-name">Phòng ${r.name}</span>
+                                                            <a class="user-name" rel="new-tab" href="${createLink(controller: 'room', action: 'update', id: r.id)}">Phòng ${r.name}</a>
                                                             <span class="user-at">-</span>
                                                             <span class="user-company">${r.status.name}</span>
                                                         </div>
@@ -58,7 +58,7 @@
                                                     <div class="row">
                                                         <div class="ticket-user col-md-4 col-sm-12">
                                                             <img src="${resource(dir:'assets/img', file: 'home_' + r.status.id + '.png')}" class="user-avatar">
-                                                            <span class="user-name">Phòng ${r.name}</span>
+                                                            <a class="user-name" rel="new-tab" href="${createLink(controller: 'room', action: 'update', id: r.id)}">Phòng ${r.name}</a>
                                                             <span class="user-at">-</span>
                                                             <span class="user-company">${r.status.name}  - giá phòng - ghi chú</span>
                                                         </div>
@@ -77,7 +77,7 @@
                                                     <div class="row">
                                                         <div class="ticket-user col-md-4 col-sm-12">
                                                             <img src="${resource(dir:'assets/img', file: 'home_' + r.status.id + '.png')}" class="user-avatar">
-                                                            <span class="user-name">Phòng ${r.name}</span>
+                                                            <a class="user-name" rel="new-tab" href="${createLink(controller: 'room', action: 'update', id: r.id)}">Phòng ${r.name}</a>
                                                             <span class="user-at">-</span>
                                                             <span class="user-company">${r.status.name}</span>
                                                         </div>
@@ -101,74 +101,6 @@
                                                 </li>
                                             </g:if>
                                         </g:each>
-
-
-                                       %{-- <li class="ticket-item">
-                                            <div class="row">
-                                                <div class="ticket-user col-lg-6 col-sm-12">
-                                                    <img src="assets/img/avatars/Matt-Cheuvront.jpg" class="user-avatar">
-                                                    <span class="user-name">Nicolai Larson</span>
-                                                    <span class="user-at">at</span>
-                                                    <span class="user-company">Google</span>
-                                                </div>
-                                                <div class="ticket-time  col-lg-4 col-sm-6 col-xs-12">
-                                                    <div class="divider hidden-md hidden-sm hidden-xs"></div>
-                                                    <i class="fa fa-clock-o"></i>
-                                                    <span class="time">18 Hours Ago</span>
-                                                </div>
-                                                <div class="ticket-type  col-lg-2 col-sm-6 col-xs-12">
-                                                    <span class="divider hidden-xs"></span>
-                                                    <span class="type">Issue</span>
-                                                </div>
-                                                <div class="ticket-state bg-darkorange">
-                                                    <i class="fa fa-times"></i>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="ticket-item">
-                                            <div class="row">
-                                                <div class="ticket-user col-lg-6 col-sm-12">
-                                                    <img src="assets/img/avatars/Sergey-Azovskiy.jpg" class="user-avatar">
-                                                    <span class="user-name">Bill Jackson</span>
-                                                    <span class="user-at">at</span>
-                                                    <span class="user-company">Mabna</span>
-                                                </div>
-                                                <div class="ticket-time  col-lg-4 col-sm-6 col-xs-12">
-                                                    <div class="divider hidden-md hidden-sm hidden-xs"></div>
-                                                    <i class="fa fa-clock-o"></i>
-                                                    <span class="time">2 days Ago</span>
-                                                </div>
-                                                <div class="ticket-type  col-lg-2 col-sm-6 col-xs-12">
-                                                    <span class="divider hidden-xs"></span>
-                                                    <span class="type">Payment</span>
-                                                </div>
-                                                <div class="ticket-state bg-palegreen">
-                                                    <i class="fa fa-check"></i>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="ticket-item">
-                                            <div class="row">
-                                                <div class="ticket-user col-lg-6 col-sm-12">
-                                                    <img src="assets/img/avatars/John-Smith.jpg" class="user-avatar">
-                                                    <span class="user-name">Eric Clapton</span>
-                                                    <span class="user-at">at</span>
-                                                    <span class="user-company">Musicker</span>
-                                                </div>
-                                                <div class="ticket-time  col-lg-4 col-sm-6 col-xs-12">
-                                                    <div class="divider hidden-md hidden-sm hidden-xs"></div>
-                                                    <i class="fa fa-clock-o"></i>
-                                                    <span class="time">2 days Ago</span>
-                                                </div>
-                                                <div class="ticket-type  col-lg-2 col-sm-6 col-xs-12">
-                                                    <span class="divider hidden-xs"></span>
-                                                    <span class="type">Info</span>
-                                                </div>
-                                                <div class="ticket-state bg-yellow">
-                                                    <i class="fa fa-info"></i>
-                                                </div>
-                                            </div>
-                                        </li>--}%
                                     </ul>
                                 </div>
 

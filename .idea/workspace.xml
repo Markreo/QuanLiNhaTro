@@ -2,132 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fee11aec-a120-4a0e-93f7-306cad870c5e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/fancybox/demo/1_b.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/fancybox/demo/1_s.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/fancybox/demo/2_b.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/fancybox/demo/2_s.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/fancybox/demo/3_b.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/fancybox/demo/3_s.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/fancybox/demo/4_b.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/fancybox/demo/4_s.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/fancybox/demo/5_b.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/fancybox/demo/5_s.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/fancybox/source/blank.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/fancybox/source/fancybox_loading.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/fancybox/source/fancybox_loading@2x.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/fancybox/source/fancybox_overlay.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/fancybox/source/fancybox_sprite.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/fancybox/source/fancybox_sprite@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/fancybox/source/helpers/fancybox_buttons.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/brown-papersq.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/pojoaque.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/school-book.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/grails-app/controllers/com/quanlinhatro/LeaseDetailController.groovy" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/grails-app/views/renter/_add_renter.gsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/groovy/com/quanlinhatro/Province.groovy" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/fancybox/.gitattributes" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/fancybox/CHANGELOG.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/fancybox/CHANGELOG.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/fancybox/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/fancybox/README.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/fancybox/demo/ajax.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/fancybox/demo/iframe.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/fancybox/demo/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/fancybox/lib/jquery-1.8.2.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/fancybox/lib/jquery.mousewheel-3.0.6.pack.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/fancybox/source/helpers/jquery.fancybox-buttons.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/fancybox/source/helpers/jquery.fancybox-buttons.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/fancybox/source/helpers/jquery.fancybox-media.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/fancybox/source/helpers/jquery.fancybox-thumbs.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/fancybox/source/helpers/jquery.fancybox-thumbs.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/fancybox/source/jquery.fancybox.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/fancybox/source/jquery.fancybox.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/fancybox/source/jquery.fancybox.pack.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/CHANGES.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/README.ru.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/highlight.pack.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/agate.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/androidstudio.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/arduino-light.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/arta.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/ascetic.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/atelier-cave-dark.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/atelier-cave-light.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/atelier-dune-dark.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/atelier-dune-light.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/atelier-estuary-dark.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/atelier-estuary-light.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/atelier-forest-dark.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/atelier-forest-light.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/atelier-heath-dark.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/atelier-heath-light.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/atelier-lakeside-dark.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/atelier-lakeside-light.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/atelier-plateau-dark.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/atelier-plateau-light.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/atelier-savanna-dark.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/atelier-savanna-light.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/atelier-seaside-dark.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/atelier-seaside-light.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/atelier-sulphurpool-dark.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/atelier-sulphurpool-light.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/brown-paper.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/codepen-embed.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/color-brewer.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/dark.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/darkula.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/default.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/docco.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/dracula.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/far.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/foundation.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/github-gist.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/github.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/googlecode.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/grayscale.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/gruvbox-dark.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/gruvbox-light.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/hopscotch.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/hybrid.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/idea.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/ir-black.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/kimbie.dark.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/kimbie.light.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/magula.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/mono-blue.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/monokai-sublime.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/monokai.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/obsidian.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/paraiso-dark.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/paraiso-light.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/pojoaque.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/qtcreator_dark.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/qtcreator_light.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/railscasts.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/rainbow.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/school-book.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/solarized-dark.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/solarized-light.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/sunburst.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/tomorrow-night-blue.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/tomorrow-night-bright.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/tomorrow-night-eighties.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/tomorrow-night.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/tomorrow.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/vs.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/xcode.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/assets/plugins/highlight/styles/zenburn.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/grails-app/views/renter/_index.gsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/grails-app/views/renter/_show.gsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/grails-app/views/room/_history.gsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/com/quanlinhatro/RenterController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/com/quanlinhatro/RenterController.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/com/quanlinhatro/RoomController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/com/quanlinhatro/RoomController.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/domain/com/quanlinhatro/LeaseDetail.groovy" afterPath="$PROJECT_DIR$/grails-app/domain/com/quanlinhatro/LeaseDetail.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/domain/com/quanlinhatro/Renter.groovy" afterPath="$PROJECT_DIR$/grails-app/domain/com/quanlinhatro/Renter.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/layouts/main.gsp" afterPath="$PROJECT_DIR$/grails-app/views/layouts/main.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/renter/_new_renter.gsp" afterPath="$PROJECT_DIR$/grails-app/views/renter/_new_renter.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/room/_forRent.gsp" afterPath="$PROJECT_DIR$/grails-app/views/room/_forRent.gsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/domain/com/quanlinhatro/Room.groovy" afterPath="$PROJECT_DIR$/grails-app/domain/com/quanlinhatro/Room.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/layouts/_sidebar.gsp" afterPath="$PROJECT_DIR$/grails-app/views/layouts/_sidebar.gsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/room/_tiles.gsp" afterPath="$PROJECT_DIR$/grails-app/views/room/_tiles.gsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/room/_update.gsp" afterPath="$PROJECT_DIR$/grails-app/views/room/_update.gsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/service/_serviceGetValueByType.gsp" afterPath="$PROJECT_DIR$/grails-app/views/service/_serviceGetValueByType.gsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/stacktrace.log" afterPath="$PROJECT_DIR$/target/stacktrace.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/assets/css/qlnhatro.css" afterPath="$PROJECT_DIR$/web-app/assets/css/qlnhatro.css" />
     </list>
@@ -155,18 +41,8 @@
       <file leaf-file-name="RoomController.groovy" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/quanlinhatro/RoomController.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="75" column="24" selection-start-line="75" selection-start-column="16" selection-end-line="75" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_new_renter.gsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/views/renter/_new_renter.gsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="17" column="46" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="46" />
+            <state relative-caret-position="303">
+              <caret line="208" column="48" selection-start-line="208" selection-start-column="48" selection-end-line="208" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -175,8 +51,8 @@
       <file leaf-file-name="LeaseDetail.groovy" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/domain/com/quanlinhatro/LeaseDetail.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+            <state relative-caret-position="166">
+              <caret line="35" column="37" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
               <folding>
                 <element signature="e#26#56#0" expanded="true" />
               </folding>
@@ -187,66 +63,76 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_update.gsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/views/room/_update.gsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="403" column="51" selection-start-line="403" selection-start-column="51" selection-end-line="403" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RenterController.groovy" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/quanlinhatro/RenterController.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="55" selection-start-line="25" selection-start-column="55" selection-end-line="25" selection-end-column="55" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_add_renter.gsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/views/renter/_add_renter.gsp">
+      <file leaf-file-name="_history.gsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/views/room/_history.gsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="24" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
+              <caret line="0" column="12" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="qlnhatro.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web-app/assets/css/qlnhatro.css">
+      <file leaf-file-name="Room.groovy" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/domain/com/quanlinhatro/Room.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="90" column="18" selection-start-line="90" selection-start-column="18" selection-end-line="90" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.gsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/views/layouts/main.gsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="42" column="65" selection-start-line="42" selection-start-column="65" selection-end-line="42" selection-end-column="65" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Renter.groovy" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/domain/com/quanlinhatro/Renter.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="16" column="20" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="20" />
+            <state relative-caret-position="343">
+              <caret line="58" column="32" selection-start-line="58" selection-start-column="32" selection-end-line="58" selection-end-column="32" />
               <folding />
             </state>
           </provider>
           <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
             <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_forRent.gsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/views/room/_forRent.gsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="49">
+              <caret line="166" column="46" selection-start-line="166" selection-start-column="46" selection-end-line="166" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ServiceController.groovy" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/quanlinhatro/ServiceController.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_serviceGetValueByType.gsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/views/service/_serviceGetValueByType.gsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="251">
+              <caret line="28" column="74" selection-start-line="28" selection-start-column="74" selection-end-line="28" selection-end-column="74" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_tiles.gsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/views/room/_tiles.gsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="239">
+              <caret line="83" column="109" selection-start-line="83" selection-start-column="109" selection-end-line="83" selection-end-column="109" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_update.gsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/views/room/_update.gsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="101">
+              <caret line="124" column="91" selection-start-line="124" selection-start-column="91" selection-end-line="124" selection-end-column="91" />
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
@@ -278,9 +164,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/grails-app/conf/DataSource.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/domain/com/quanlinhatro/Base.groovy" />
-        <option value="$PROJECT_DIR$/src/groovy/com/quanlinhatro/Base.groovy" />
         <option value="$PROJECT_DIR$/grails-app/conf/BootStrap.groovy" />
         <option value="$PROJECT_DIR$/grails-app/domain/com/quanlinhatro/UserRole.groovy" />
         <option value="$PROJECT_DIR$/application.properties" />
@@ -303,32 +186,35 @@
         <option value="$PROJECT_DIR$/grails-app/views/region/_edit.gsp" />
         <option value="$PROJECT_DIR$/grails-app/views/room/html.gsp" />
         <option value="$PROJECT_DIR$/grails-app/controllers/com/quanlinhatro/UserController.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/views/layouts/_sidebar.gsp" />
         <option value="$PROJECT_DIR$/grails-app/controllers/com/quanlinhatro/RegionController.groovy" />
         <option value="$PROJECT_DIR$/grails-app/services/room/RoomService.groovy" />
         <option value="$PROJECT_DIR$/grails-app/services/com/quanlinhatro/RoomService.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/views/service/_serviceGetValueByType.gsp" />
         <option value="C:/grails-2.4.4/lib/org.codehaus.groovy/groovy-all/jars/groovy-all-2.3.7.jar!/org/codehaus/groovy/runtime/DefaultGroovyMethods.class" />
         <option value="$PROJECT_DIR$/grails-app/domain/com/quanlinhatro/Expenditure.groovy" />
         <option value="$PROJECT_DIR$/grails-app/domain/com/quanlinhatro/Region.groovy" />
         <option value="$PROJECT_DIR$/grails-app/domain/com/quanlinhatro/Service.groovy" />
         <option value="$PROJECT_DIR$/grails-app/views/room/_edit.gsp" />
-        <option value="$PROJECT_DIR$/grails-app/domain/com/quanlinhatro/Room.groovy" />
         <option value="$PROJECT_DIR$/grails-app/domain/com/quanlinhatro/Lease.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/views/room/_tiles.gsp" />
         <option value="$PROJECT_DIR$/grails-app/views/room/_forRent.gsp" />
         <option value="$PROJECT_DIR$/grails-app/domain/com/quanlinhatro/LeaseDetail.groovy" />
         <option value="$PROJECT_DIR$/grails-app/controllers/com/quanlinhatro/LeaseDetailController.groovy" />
         <option value="$PROJECT_DIR$/src/groovy/com/quanlinhatro/Province.groovy" />
         <option value="$PROJECT_DIR$/grails-app/views/layouts/main.gsp" />
         <option value="$PROJECT_DIR$/web-app/assets/js/qlnhatro.js" />
-        <option value="$PROJECT_DIR$/web-app/assets/css/qlnhatro.css" />
-        <option value="$PROJECT_DIR$/grails-app/domain/com/quanlinhatro/Renter.groovy" />
         <option value="$PROJECT_DIR$/grails-app/views/renter/_add_renter.gsp" />
-        <option value="$PROJECT_DIR$/grails-app/controllers/com/quanlinhatro/RenterController.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/controllers/com/quanlinhatro/RoomController.groovy" />
         <option value="$PROJECT_DIR$/grails-app/views/renter/_new_renter.gsp" />
+        <option value="$PROJECT_DIR$/web-app/assets/css/qlnhatro.css" />
+        <option value="$PROJECT_DIR$/grails-app/views/layouts/_sidebar.gsp" />
+        <option value="$PROJECT_DIR$/grails-app/domain/com/quanlinhatro/Renter.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/controllers/com/quanlinhatro/RenterController.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/views/renter/_renter.gsp" />
+        <option value="$PROJECT_DIR$/grails-app/views/renter/_index.gsp" />
+        <option value="$PROJECT_DIR$/grails-app/views/room/_tiles.gsp" />
+        <option value="$PROJECT_DIR$/grails-app/views/service/_serviceGetValueByType.gsp" />
+        <option value="$PROJECT_DIR$/grails-app/domain/com/quanlinhatro/Room.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/views/room/_history.gsp" />
         <option value="$PROJECT_DIR$/grails-app/views/room/_update.gsp" />
+        <option value="$PROJECT_DIR$/grails-app/controllers/com/quanlinhatro/RoomController.groovy" />
       </list>
     </option>
   </component>
@@ -899,7 +785,9 @@
       <workItem from="1489940764127" duration="496000" />
       <workItem from="1489941427116" duration="6616000" />
       <workItem from="1490015945395" duration="13013000" />
-      <workItem from="1490102500367" duration="12676000" />
+      <workItem from="1490102500367" duration="13133000" />
+      <workItem from="1490194016713" duration="7176000" />
+      <workItem from="1490201331454" duration="6379000" />
     </task>
     <task id="LOCAL-00001" summary="init Project">
       <created>1484492980945</created>
@@ -999,33 +887,39 @@
       <option name="project" value="LOCAL" />
       <updated>1490025173110</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="add new renter">
+      <created>1490116793606</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1490116793606</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="288167000" />
+    <option name="totallyTimeSpent" value="302179000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32554516" sideWeight="0.5030534" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977098" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Grails Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32258064" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Grails View" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18078668" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39938557" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Grails View" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18078668" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872504" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24731183" sideWeight="0.49694657" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2580645" sideWeight="0.49694657" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872504" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -1039,6 +933,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Grails Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32258064" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1105,11 +1000,12 @@
     <MESSAGE value="some code fix UI" />
     <MESSAGE value="some code update room" />
     <MESSAGE value="some code update room, update value" />
-    <option name="LAST_COMMIT_MESSAGE" value="some code update room, update value" />
+    <MESSAGE value="add new renter" />
+    <option name="LAST_COMMIT_MESSAGE" value="add new renter" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="9" />
+      <option name="time" value="10" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1118,28 +1014,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_79/src.zip!/java/lang/NumberFormatException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/room/html.gsp" />
-    <entry file="jar://C:/grails-2.4.4/lib/org.codehaus.groovy/groovy-all/jars/groovy-all-2.3.7.jar!/org/codehaus/groovy/tools/stylesheet.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="475" column="5" selection-start-line="475" selection-start-column="5" selection-end-line="475" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_79/src.zip!/java/util/Calendar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="398" column="28" selection-start-line="398" selection-start-column="28" selection-end-line="398" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/quanlinhatro/UserController.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -1152,13 +1026,6 @@
         <state relative-caret-position="3638">
           <caret line="242" column="12" selection-start-line="242" selection-start-column="12" selection-end-line="242" selection-end-column="12" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/layouts/_sidebar.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="25" selection-start-line="0" selection-start-column="25" selection-end-line="0" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -1178,14 +1045,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/service/_serviceGetValueByType.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-176">
-          <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/taglib/quanlinhatro/HelperTagLib.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -1198,7 +1057,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="326">
           <caret line="29" column="18" selection-start-line="4" selection-start-column="12" selection-end-line="29" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1234,17 +1092,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
           <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/domain/com/quanlinhatro/Region.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1309,29 +1156,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/domain/com/quanlinhatro/Room.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-        <state />
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.7.0_79/src.zip!/java/util/concurrent/FutureTask.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
           <caret line="261" column="0" selection-start-line="261" selection-start-column="0" selection-end-line="261" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/room/_tiles.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1649">
-          <caret line="97" column="131" selection-start-line="97" selection-start-column="131" selection-end-line="97" selection-end-column="131" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1357,26 +1185,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/room/_forRent.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1258">
-          <caret line="74" column="96" selection-start-line="74" selection-start-column="96" selection-end-line="74" selection-end-column="96" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/idea.jar!/resources/html5-schema/html5/web-forms2.rnc">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
           <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/quanlinhatro/BaseController.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
           <folding />
         </state>
       </provider>
@@ -1409,7 +1221,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1425,16 +1236,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
-          <folding>
-            <marker date="1483898713009" expanded="true" signature="47739:47775" ph="..." />
-            <marker date="1483898713009" expanded="true" signature="48086:48110" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/layouts/main.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
+        <state relative-caret-position="714">
           <caret line="42" column="65" selection-start-line="42" selection-start-column="65" selection-end-line="42" selection-end-column="65" />
           <folding />
         </state>
@@ -1444,17 +1251,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="247" column="12" selection-start-line="247" selection-start-column="6" selection-end-line="247" selection-end-column="12" />
-          <folding>
-            <marker date="1483827040061" expanded="true" signature="1396:1403" ph="×" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web-app/assets/css/qlnhatro.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="90" column="18" selection-start-line="90" selection-start-column="18" selection-end-line="90" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1462,7 +1258,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="292">
           <caret line="128" column="39" selection-start-line="128" selection-start-column="39" selection-end-line="128" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1470,6 +1265,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="177">
           <caret line="20" column="66" selection-start-line="20" selection-start-column="66" selection-end-line="20" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web-app/assets/css/qlnhatro.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="95" column="31" selection-start-line="95" selection-start-column="31" selection-end-line="95" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/quanlinhatro/BaseController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="9" column="11" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
           <folding />
         </state>
       </provider>
@@ -1482,10 +1292,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/domain/com/quanlinhatro/Renter.groovy">
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/com/quanlinhatro/Region.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="16" column="20" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="20" />
+        <state relative-caret-position="51">
+          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
           <folding />
         </state>
       </provider>
@@ -1493,10 +1303,120 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/com/quanlinhatro/Renter.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/renter/_new_renter.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="68" column="44" selection-start-line="68" selection-start-column="44" selection-end-line="68" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/layouts/_sidebar.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="32" column="56" selection-start-line="32" selection-start-column="56" selection-end-line="32" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/quanlinhatro/RenterController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/renter/_show.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="10" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/renter/_index.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="58" column="34" selection-start-line="58" selection-start-column="34" selection-end-line="58" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/quanlinhatro/ServiceController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/service/_serviceGetValueByType.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="28" column="74" selection-start-line="28" selection-start-column="74" selection-end-line="28" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/com/quanlinhatro/Room.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="58" column="32" selection-start-line="58" selection-start-column="32" selection-end-line="58" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/room/_forRent.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="49">
+          <caret line="166" column="46" selection-start-line="166" selection-start-column="46" selection-end-line="166" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/room/_tiles.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="83" column="109" selection-start-line="83" selection-start-column="109" selection-end-line="83" selection-end-column="109" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/room/_history.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="12" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/room/_update.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="101">
+          <caret line="124" column="91" selection-start-line="124" selection-start-column="91" selection-end-line="124" selection-end-column="91" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/domain/com/quanlinhatro/LeaseDetail.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+        <state relative-caret-position="166">
+          <caret line="35" column="37" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
           <folding>
             <element signature="e#26#56#0" expanded="true" />
           </folding>
@@ -1506,34 +1426,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/quanlinhatro/RenterController.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="55" selection-start-line="25" selection-start-column="55" selection-end-line="25" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/renter/_new_renter.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="17" column="46" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/room/_update.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="403" column="51" selection-start-line="403" selection-start-column="51" selection-end-line="403" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/quanlinhatro/RoomController.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="75" column="24" selection-start-line="75" selection-start-column="16" selection-end-line="75" selection-end-column="24" />
+        <state relative-caret-position="303">
+          <caret line="208" column="48" selection-start-line="208" selection-start-column="48" selection-end-line="208" selection-end-column="48" />
           <folding />
         </state>
       </provider>

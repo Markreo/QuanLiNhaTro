@@ -50,11 +50,11 @@ class Room extends Base{
 
     static mapping = {
         version(false)
-        renters joinTable: [name: 'room_renter', column: 'room_id']
-        uses joinTable: [name: 'room_uses_service', key: 'service_id', column:'room_id']
+        renters joinTable: [name: 'room_renter', column: 'renter_id']
+        uses joinTable: [name: 'room_uses_service', key: 'room_id', column:'service_id']
     }
 
-    static transients = ['getDueDateThisMonth', 'convertValue1', 'convertValue2','getLeaseThisMonth', 'getElectricDetail', 'getWaterDetail', 'getUseService']
+    static transients = ['getDueDateThisMonth', 'convertValue1', 'convertValue2','getLeaseThisMonth', 'getElectricService', 'getWaterService', 'getUseService']
 
     Date getDueDateThisMonth() {
         def cal = Calendar.instance
@@ -106,12 +106,12 @@ class Room extends Base{
         return Lease.findByRoomAndFromDateLessThanEqualsAndToDateGreaterThanEquals(this, new Date(),new Date())
     }
 
-    def getElectricDetail() {
-        return this.leaseThisMonth?.details?.find{it.parseService()?.unit == Service.Unit.KGW}
+    def getElectricService() {
+        return this.uses.find {it.unit == Service.Unit.KGW}
     }
 
-    def getWaterDetail() {
-        return this.leaseThisMonth?.details?.find{it.parseService()?.unit == Service.Unit.M3_2}
+    def getWaterService() {
+        return this.uses.find {it.unit == Service.Unit.M3_2}
     }
 
     def getUseService(Service.Unit unit) {

@@ -2,38 +2,42 @@
 <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="row">
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                <div class="databox bg-white radius-bordered">
-                    <div class="databox-left bg-themesecondary">
-                        <div class="databox-piechart" style="vertical-align: middle; text-align: center; line-height: 45px">
-                            <span>${room.electricDetail?.value2}</span>
+            <g:if test="${room.electricService}">
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="databox bg-white radius-bordered">
+                        <div class="databox-left bg-themesecondary">
+                            <div class="databox-piechart" style="vertical-align: middle; text-align: center; line-height: 45px">
+                                <span>${room.electricService?.currentValue}</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="databox-right">
-                        <span class="databox-number themesecondary">Số điện</span>
-                        <div class="databox-text darkgray">Cập nhật ngày ${room.electricDetail.lastUpdated.format('dd/MM/yyyy')}</div>
-                        <div class="databox-stat themesecondary radius-bordered">
-                            <i class="stat-icon icon-lg fa fa-edit"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                <div class="databox bg-white radius-bordered">
-                    <div class="databox-left bg-themethirdcolor">
-                        <div class="databox-piechart" style="vertical-align: middle; text-align: center; line-height: 45px">
-                            ${room.waterDetail?.value2}
-                        </div>
-                    </div>
-                    <div class="databox-right">
-                        <span class="databox-number themethirdcolor">Số nước</span>
-                        <div class="databox-text darkgray">Cập nhật ngày ${new Date().format('dd/MM/yyyy').plus(5)}</div>
-                        <div class="databox-stat themethirdcolor radius-bordered">
-                            <i class="stat-icon  icon-lg fa fa-edit"></i>
+                        <div class="databox-right">
+                            <span class="databox-number themesecondary">Số điện</span>
+                            <div class="databox-text darkgray">Cập nhật ngày ${room.electricService.lastUpdated.format('dd/MM/yyyy')}</div>
+                            <div class="databox-stat themesecondary radius-bordered">
+                                <i class="stat-icon icon-lg fa fa-edit"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </g:if>
+            <g:if test="${room.waterService}">
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="databox bg-white radius-bordered">
+                        <div class="databox-left bg-themethirdcolor">
+                            <div class="databox-piechart" style="vertical-align: middle; text-align: center; line-height: 45px">
+                                ${room.waterService.currentValue}
+                            </div>
+                        </div>
+                        <div class="databox-right">
+                            <span class="databox-number themethirdcolor">Số nước</span>
+                            <div class="databox-text darkgray">Cập nhật ngày ${room.waterService.lastUpdated.format("dd/MM/yyyy")}</div>
+                            <div class="databox-stat themethirdcolor radius-bordered">
+                                <i class="stat-icon  icon-lg fa fa-edit"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </g:if>
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <div class="databox bg-white radius-bordered">
                     <div class="databox-left bg-themeprimary">
@@ -118,20 +122,21 @@
                                     <div class="horizontal-space"></div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padding-bottom-20">
                                         <g:formRemote class="form-horizontal" name="update_currentValue" url="[controller: 'room', action: 'saveUpdateCurrentValue']" update="update_currentValue">
+                                            <g:hiddenField name="room" value="${room.id}"/>
                                             <div id="update_currentValue"></div>
                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 padding-15 bordered-ddd" style="border-radius: 5px">
                                                 <div class="form-title">
                                                     Lượng sử dụng tháng này:
                                                 </div>
 
-                                                    <g:each in="${room.leaseThisMonth.details.sort{it.id}}" var="detail">
+                                                    <g:each in="${room.leaseThisMonth?.details?.sort{it.id}}" var="detail">
                                                         <div class="form-group">
                                                             <div class="col-sm-12">
                                                                 <label>${detail.parseInstance().name}:</label>
                                                                 <g:hiddenField name="detail" value="${detail.id}"/>
                                                                 <span class="input-icon icon-right">
                                                                     <g:if test="${detail.parseInstance().unit == com.quanlinhatro.Service.Unit.TIENPHONG}">
-                                                                        <input name="currentPrice" type="text" class="form-control" value="${detail.total}">
+                                                                        <input name="currentPrice" type="text" class="form-control" value="${detail?.total}">
                                                                     </g:if>
                                                                     <g:else>
                                                                         <input name="curentValue" type="text" class="form-control" value="${detail.value2 != 0 ? detail.value2 : detail.value1}">
@@ -147,7 +152,7 @@
                                                 <div class="form-title">
                                                     Tạm tính: %{--TODO: make table--}%
                                                 </div>
-                                                <g:each in="${room.leaseThisMonth.details.sort{it.id}}" var="detail">
+                                                <g:each in="${room.leaseThisMonth?.details?.sort{it.id}}" var="detail">
                                                     <div class="form-group">
                                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                             <label class="col-md-3 no-padding">${detail.parseInstance().name}</label>
@@ -164,7 +169,7 @@
                                                 <div class="form-group">
                                                     <div class="col-sm-12">
                                                         <label class="col-md-8">Tổng cộng:</label>
-                                                        <label class="col-md-4 no-padding-right text-align-right"><g:formatNumber number="${room.leaseThisMonth.total}" format="###,###,###"/> đ</label>
+                                                        <label class="col-md-4 no-padding-right text-align-right"><g:formatNumber number="${room.leaseThisMonth?.total}" format="###,###,###"/> đ</label>
                                                     </div>
                                                 </div>
                                                 <div class="form-group pull-right">
@@ -436,14 +441,14 @@
         }
     }
 
+    $(document).off('click','#update_add_renter')
     $(document).on('click','#update_add_renter',function (e) {
-        e.preventDefault()
-        var url = this.href
+        e.preventDefault();
+        var url = this.href;
         $.post(url, function(html) {
             bootbox.dialog({
                 message: html,
-                title: 'Thêm người thuê phòng',
-                width: '700px'
+                title: 'Thêm người thuê phòng'
             })
         })
     })

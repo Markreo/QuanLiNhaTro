@@ -16,7 +16,7 @@
             <label class="col-xs-3">Số điện hiện tại:</label>
             <div class="col-xs-3 ">
                 <g:hiddenField name="serviceId" value="${s.id}"/>
-                <input name="value" class="form-control" required/>
+                <input name="value" class="form-control" value="${room.electrics}" required/>
             </div>
             <div class="col-xs-6"></div>
         </div>
@@ -26,7 +26,7 @@
           <label class="col-xs-3">Số nước hiện tại:</label>
           <div class="col-xs-3 ">
               <g:hiddenField name="serviceId" value="${s.id}"/>
-              <input name="value" class="form-control" required/>
+              <input name="value" class="form-control" value="${room.electrics}" required/>
           </div>
           <div class="col-xs-6"></div>
       </div>

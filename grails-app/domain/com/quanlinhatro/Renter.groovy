@@ -3,6 +3,9 @@
  */
 package com.quanlinhatro
 
+import groovy.transform.ToString
+
+@ToString
 class Renter extends Base {
     enum Sex{
         MALE(0, 'Nam'),
@@ -22,6 +25,7 @@ class Renter extends Base {
     String birthPlace
     int birthYear
 
+    Region region
 
     Date dateCreated
     Date lastUpdated
@@ -32,6 +36,7 @@ class Renter extends Base {
         sex nullable: false
         phone nullable: false
 
+        region nullable: false
         dateCreated()
     }
 

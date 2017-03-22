@@ -86,7 +86,8 @@ class RoomController extends BaseController{
                         birthPlace: birthPlace[index],
                         birthYear: birthYear[index],
                         userID: userID[index],
-                        phone: phone[index])).save(flush: true)
+                        phone: phone[index],
+                        region: region)).save(flush: true)
             }
             render ([response: 'OK', message: [type: 'success', content: 'Save!']] as JSON)
         }
@@ -120,7 +121,7 @@ class RoomController extends BaseController{
             roomInstance.save(flush: true)
             render ([response: 'OK',
                      message: [type: 'success', content: 'Save!'],
-                     update: [content: g.render(template: '/service/serviceGetValueByType', model: [services: roomInstance.uses]), position: 'getvalueService']] as JSON)
+                     update: [content: g.render(template: '/service/serviceGetValueByType', model: [services: roomInstance.uses, room: roomInstance]), position: 'getvalueService']] as JSON)
             roomService.createDeafultTIENPHONG(roomInstance)
         }
     }
@@ -170,7 +171,11 @@ class RoomController extends BaseController{
     def update(long id) {
         def room = Room.get(id)
         if(room) {
-            render(template: 'update', model: [room: room])
+            if(room.status == Room.Status.ARERENTING) {
+                render(template: 'update', model: [room: room])
+            } else {
+                render(template: 'history', model: [room: room])
+            }
         } else {
             render "Not found!!!"
         }
@@ -181,15 +186,28 @@ class RoomController extends BaseController{
         println("saveUpdateCurrentValue")
         def detailID = params.getList('detail')
         def curentValues = params.getList('curentValue')
+        def room = Room.get(params.getLong('room'))
         def details = []
         int index = 0
         detailID.each {
             def detail = LeaseDetail.get(it as long)
-            if(detail.parseInstance().unit != Service.Unit.TIENPHONG){
-                if(detail.updateValue(curentValues[index++] as long)) {
+            def unit = detail.parseInstance().unit
+            def useService = detail.parseService()
+
+            if(unit != Service.Unit.TIENPHONG){
+                if(useService) {
+                    useService.currentValue = curentValues[index] as long
+                    useService.save(flush: true)
+                }
+                if(detail.updateValue(curentValues[index] as long)) {
                     detail.save(flush: true)
                 }
+                index++
             } else {
+                if(useService) {
+                    useService.currentPrice = params.getLong('currentPrice')
+                    useService.save(flush: true)
+                }
                 if(detail.total != params.getLong('currentPrice')) {
                     println   params.'currentPrice'
                     detail.total = params.getLong('currentPrice')
